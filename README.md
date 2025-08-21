@@ -1,0 +1,1 @@
+# minamisoma-tourism-council-site
