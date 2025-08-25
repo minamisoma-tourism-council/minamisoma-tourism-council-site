@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
-    
     <link rel="icon" href="img/top.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,21 +17,23 @@
   </head>
 
 <body>
-  <footer>
 <!--nave ナビゲーション-->
-  <nav>
+  <nav class="navbar">
     <ul class="nav">
       <li><a href="#about">みなみそうまのコト</a></li>
       <li><a href="#enjoy">みなみそうまのタノシミ</a></li>
       <li><a href="#recommend">みなみそうまのイチオシ</a></li>
     </ul>
-  </nav>
-<!--nave ナビゲーション-->
-</footer>
 
-<!--スペース-->
-<div class="spacer"></div>
-<!--スペース-->
+<!-- ハンバーガーメニュー -->
+<div class="menu-icon">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+</nav>
+
+<div class="kanko-net"><img src="img/kanko-net.png" alt="みなみそうま観光ネット"></div>
 
 <!--section class="hero" メインビジュアル-->
 <section class="hero">
@@ -40,10 +41,15 @@
     <div class="top-logo">
     <a href="#hero"><img src="img/top.png"alt="蹄音が描く、青い旅の景色"></a>
     </div>
-  
+
+    <div class="space"></div>
+
+  </section>
+
+
       <!--旅に出よう-->
         <div class="message">
-          <h2>馬の足音に導かれる、南相馬の旅</h2>
+          <h1>馬の足音に導かれる、南相馬の旅</h1>
           <p>海に抱かれる南相馬の街並み。</p>
           <p>潮風、漁火、田園の輝き。</p>
           <p>馬と共に紡がれる祭りの響きに、笑顔の交差する小径。</p>
@@ -52,31 +58,52 @@
         </div>
       <!--旅に出よう-->
 
- <!--スペース-->
- <div class="spacer"></div>
- <!--スペース-->
+    </div> 
 
-</section>
 <!--section class="hero" メインビジュアル-->
 
 <!--map地図-->
 <section id=about>
 
-<div class="about-container">
+  <section class="pickup-section">
+    <div class="item"><img src="img/about.png" alt="about"></div>
+    <div class="pickup-cards">
+      <article class="pickup-card">
+        <img src="img/AB001.jpg" alt="かしまエリア">
+        <div class="pickup-body">
+          <span class="pickup-label">万葉の里</span>
+          <h3 class="pickup-title">かしまエリア</h3>
+          <p class="pickup-text">南相馬市の北部に位置する鹿島区は、西方には阿武隈山系の「山」、そこから流れる真野川沿いに広がる「里」、そして太平洋の「海」の幸に恵まれた自然豊かな街です。</p>
+        </div>
+      </article>
+  
+      <article class="pickup-card">
+        <img src="img/AB002.jpg" alt="はらまちエリア">
+        <div class="pickup-body">
+          <span class="pickup-label">野馬追の里</span>
+          <h3 class="pickup-title">はらまちエリア</h3>
+          <p class="pickup-text">南相馬市の中心地であり、商業施設や住宅、企業などが集積しています。
+            相馬野馬追:
+            相馬野馬追という祭りが行われる地域として知られています。
+            サーフスポット:
+            北泉海岸は、東北屈指のサーフスポットとして知られ、サーフィンを楽しむ人々が集まります。</p>
+        </div>
+      </article>
+  
+      <article class="pickup-card">
+        <img src="img/AB003.jpg" alt="おだかエリア">
+        <div class="pickup-body">
+          <span class="pickup-label">紅梅の里</span>
+          <h3 class="pickup-title">おだかエリア</h3>
+          <p class="pickup-text">南相馬市小高区は、福島県の東端部、東に太平洋を臨み、西は阿武隈山地の山々に抱かれた、東西12㎞、南北8㎞、総面積91.95㎢を有する田園風景が広がるまちです。
+            気候は、東日本特有の海洋性気候で、寒暖の差は比較的少なく、夏は涼しく、冬は降雪の少ない、温暖な気象条件に恵まれています。</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  
 
-  <div class="box-ex">
-    <h3>かしまエリア</h3>
-    <p>南相馬市の北部に位置する鹿島区は、西方には阿武隈山系の「山」、そこから流れる真野川沿いに広がる「里」、そして太平洋の「海」の幸に恵まれた自然豊かな街です。</p>
-    <h3>はらまちエリア</h3>
-    <p>南相馬市の中心地であり、商業施設や住宅、企業などが集積しています。
-      相馬野馬追:
-      相馬野馬追という祭りが行われる地域として知られています。
-      サーフスポット:
-      北泉海岸は、東北屈指のサーフスポットとして知られ、サーフィンを楽しむ人々が集まります。</p>
-    <h3>おだかエリア</h3>
-    <p>南相馬市小高区は、福島県の東端部、東に太平洋を臨み、西は阿武隈山地の山々に抱かれた、東西12㎞、南北8㎞、総面積91.95㎢を有する田園風景が広がるまちです。
-      気候は、東日本特有の海洋性気候で、寒暖の差は比較的少なく、夏は涼しく、冬は降雪の少ない、温暖な気象条件に恵まれています。</p>
-</div>
+
 
   <div class="map">
 
@@ -96,19 +123,71 @@
 </id>
 <!--map地図end-->
 
- <!--スペース-->
- <div class="spacer-3"></div>
- <!--スペース-->
+
  
- <div class="box">
-  <img src="img/marche.png" alt="サンプル画像" class="box-img">
-  <div class="box-text">
-    <h2>Marche-マルシェ- in Kitaizumi Surf Festival 2025</h2>
-    <p>10/3(金)〜5(日)開催＠北泉海浜総合公園</p>
+
+ <section class="recommend-section">
+  <div class="item"><img src="img/Recommend.png" alt="recommend"></div>
+  
+  <div class="cards">
+    <article class="card">
+      <img src="images/cruise.jpg" alt="next">
+      <div class="card-body">
+        <small class="card-category">next</small>
+        <h3 class="card-title">next</h3>
+      </div>
+    </article>
+    <article class="card">
+      <img src="images/kamaboko.jpg" alt="next">
+      <div class="card-body">
+        <small class="card-category">next</small>
+        <h3 class="card-title">next</h3>
+      </div>
+    </article>
+    <article class="card">
+      <img src="images/cruise.jpg" alt="next">
+      <div class="card-body">
+        <small class="card-category">next</small>
+        <h3 class="card-title">next</h3>
+      </div>
+    <!-- 他のカードも同様に追加 -->
   </div>
-</div>
+</section>
 
 
 
+<section class="pickup-section">
+  <div class="item"><img src="img/Pick up.png" alt="pick up"></div>
+  <div class="pickup-cards">
+    <a href="info.html">
+      <article class="pickup-card">
+      <img src="images/festival.jpg" alt="相馬野馬追">
+      <div class="pickup-body">
+        <span class="pickup-label">イベント</span>
+        <h3 class="pickup-title">相馬野馬追</h3>
+        <p class="pickup-text">next</p>
+      </div>
+    </article>
+  </a>
+
+    <article class="pickup-card">
+      <img src="images/food.jpg" alt="特集">
+      <div class="pickup-body">
+        <span class="pickup-label">特集</span>
+        <h3 class="pickup-title">next</h3>
+        <p class="pickup-text">next</p>
+      </div>
+    </article>
+
+    <article class="pickup-card">
+      <img src="images/food.jpg" alt="特集">
+      <div class="pickup-body">
+        <span class="pickup-label">特集</span>
+        <h3 class="pickup-title">next</h3>
+        <p class="pickup-text">next</p>
+      </div>
+    </article>
+  </div>
+</section>
 
 </body>

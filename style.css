@@ -22,6 +22,13 @@ body {
 
 
 /*nav ナビゲーション*/
+.navbar{
+  display: flex;
+  justify-content: space-between; /* 左右に分ける */
+  align-items: center;
+  background: #333;
+  padding: 0 1rem;
+}
 .nav {
   list-style: none;    /* ●マークを消す */
   margin: 0;
@@ -30,24 +37,62 @@ body {
   background: #333;    /* 背景色 */
 }
 .nav li {
-  margin: 0;
+  margin: 10px;
+  position: relative;  /* 疑似要素の基準にする */
+
 }
 .nav a {
   display: block;         /* クリック範囲を広げる */
   padding: 1rem 1.5rem;   /* 内側余白 */
   color: white;           /* 文字色 */
   text-decoration: none;  /* 下線消す */
+  font-size: 12px;
 }
 .nav a:hover {
   background: #555;       /* ホバー時の色変化 */
 }
-/*nav ナビゲーション*/
 
-/*スペース*/
-.spacer{
-  height: 50px;/* 高さ */
+.nav li::after {
+  content: "";
+  position: absolute;
+  top: 35%;          /* 上からの位置 */
+  right: 0;          /* 右側に配置 */
+  width: 1px;        /* 線の太さ */
+  height: 30%;       /* 縦線の長さ（調整可能） */
+  background: white;  /* 線の色 */
 }
 
+/* 最後の項目だけ線を消す */
+.nav li:last-child::after {
+  display: none;
+}
+/* ハンバーガーメニュー（右寄せ） */
+.menu-icon {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.menu-icon span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+/*スペース*/
+.spacer{
+  height: 200px;/* 高さ */
+}
+
+
+.kanko-net img{
+  max-width:100%;
+  width: 150px;
+  border-bottom-right-radius: 20px;
+ 
+}
 
 /*section class="hero"*/
 .top-logo img{
@@ -56,7 +101,8 @@ body {
   display: block;      /* インライン要素をブロックに変換 */
   margin: 0 auto;      /* 左右を自動調整で中央寄せ */
 }
-  
+
+
 
 /*フェードイン*/
 .top-logo img {
@@ -70,6 +116,16 @@ body {
 }
 /*フェードイン*/
 
+.space{
+  height: 100px;
+}
+
+.wave-message{
+  position: relative; 
+}
+
+
+
 
 /*旅に出よう。*/
 .message {
@@ -79,14 +135,27 @@ body {
   flex-direction: column;
   justify-content: center;  /* 縦方向中央揃え */
   align-items: center;      /* 横方向中央揃え */
-  color: rgb(7, 6, 6);             /* 文字色 */
+  color: white;             /* 文字色 */
   text-align: center;       /* 中央揃え */
   /**background-color: rgba(0,0,0,0.3); /* 半透明背景で文字を見やすく */
   padding: 20px;            /* 余白 */
   box-sizing: border-box;
-  background-color: rgb(247, 253, 255);
+  background: linear-gradient(
+    135deg,                       /* グラデーションの角度 */
+    rgba(0, 115, 238, 0.364),       /* 青 (透明度80%) */
+    rgba(148, 170, 176, 0.181)        /* 水色 (透明度50%) */
+  );
+ 
+  
 }/*旅に出よう。*/
 
+
+@media (max-width: 768px) {
+  .message {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
 
 
 /*フェードイン*/
@@ -145,6 +214,7 @@ body {
       width: 100%;       /* 画像を親幅に合わせて拡大縮小 */
       height: 100%;
       display: block;
+      padding: 100px 0 0 0;
     }
 
     .area {
@@ -184,10 +254,6 @@ body {
 }
 
 
-/*spaceスペース*/
-.spacer-3{
-  height: 100px;
-}
 
 
 /*box*/
@@ -215,4 +281,120 @@ body {
 }
 
 
+.recommend-section {
+  padding: 40px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.recommend-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
 
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+@media (min-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 12px;
+}
+.card-category {
+  font-size: 12px;
+  color: #6b7280;
+}
+.card-title {
+  font-size: 18px;
+  margin: 6px 0 0;
+}
+
+.pickup-section {
+  padding: 40px 20px;
+  background: #f9fafb; /* 薄いグレーでRecommendと区切る */
+}
+.pickup-section h2 {
+  font-size: 28px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.pickup-cards {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 800px) {
+  .pickup-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pickup-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+.pickup-card:hover {
+  transform: translateY(-6px);
+}
+
+.pickup-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.pickup-body {
+  padding: 16px;
+}
+
+.pickup-label {
+  display: inline-block;
+  font-size: 12px;
+  color: #fff;
+  background: #ef4444; /* 赤系で強調 */
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.pickup-title {
+  font-size: 20px;
+  margin: 6px 0;
+}
+
+.pickup-text {
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.item img{
+  height: 100px;
+  margin:0;
+  display: center;
+}
