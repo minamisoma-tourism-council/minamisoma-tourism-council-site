@@ -20,7 +20,21 @@ body {
 }
 /*画像切り替え*/
 
+body {
+  background-repeat: no-repeat;
+  background-size: cover;          /* 常に画面全体を覆う */
+  background-position: center;     /* 画像の中心を優先して表示 */
+  background-attachment: fixed;    /* PCでは固定 */
+}
 
+/* スマホ用 */
+@media (max-width: 768px) {
+  body {
+    background-size: cover;        /* 縮小せず拡大して表示 */
+    background-position: center;   /* 常に中央を表示 */
+    background-attachment: scroll; /* 固定は解除（スマホは効かないため） */
+  }
+}
 /*nav ナビゲーション*/
 .navbar{
   display: flex;
