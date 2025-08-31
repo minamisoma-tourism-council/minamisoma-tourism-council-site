@@ -149,18 +149,27 @@ body {
 .hero-overlay {
     position: absolute;
     top: 60%;  /* 中央寄せ */
-    left: 20%;
+    left: 30%;
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2; /* ← 背景より上 */
     
 }
 .hero-overlay img {
-    max-width: 80%;
+    width: 100%;
+    max-width: 500px; /* PCでは大きめ、縮小可 */
     height: auto;
-    opacity: 0; /* 最初は非表示 */
+    opacity: 0;
     transition: opacity 1s ease-in-out;
-}
+  }
+  
+
+/* スマホ調整 */
+@media (max-width: 768px) {
+    .hero-overlay img {
+      max-width: 80%; /* スマホでは少し小さめ */
+    }
+  }
 
 .hero-content {
     position: absolute;
