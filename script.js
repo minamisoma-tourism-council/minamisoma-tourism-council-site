@@ -83,3 +83,15 @@ window.addEventListener("load", () => {
       })
       .catch(err => console.error('ニュース読み込み失敗:', err));
   });
+  const newsData = [
+    { "date": "2025-09-04", "title": "イベント情報更新", "url": "#" },
+    { "date": "2025-09-01", "title": "観光案内パンフレット完成", "url": "#" },
+    { "date": "2025-08-28", "title": "馬祭り開催決定", "url": "#" }
+  ];
+  
+  const list = document.getElementById('news-list');
+  newsData.forEach(item => {
+    const li = document.createElement('li');
+    li.innerHTML = `<span class="date">${item.date}</span><a href="${item.url}" target="_blank">${item.title}</a>`;
+    list.appendChild(li);
+  });
