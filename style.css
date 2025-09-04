@@ -58,13 +58,20 @@ body {
 }
 
 /* --- ナビリスト（おすすめ／ピックアップ） --- */
-.nav-list {
+
+/*.nav-list {
     list-style: none;
     margin: 0; padding: 0;
     display: flex;
     align-items: center;
     gap: 18px;
     font-size: 10px;
+   
+        font-family: "Kaisei Decol", serif;
+        font-weight: 400;
+        font-style: normal;
+      
+      
 }
 .nav-list a {
     display: flex;
@@ -77,12 +84,16 @@ body {
     line-height: 1.2;
     transition: color 0.18s ease;
     padding: 10px;
+    
+
+    
+
 }
 .nav-list .jp { font-size: 13px; }
 .nav-list .en { font-size: 10px; font-weight: 400; color: #555; }
 
 /* --- ハンバーガー --- */
-.hamburger {
+/*.hamburger {
     display: none;
     font-size: 24px;
     cursor: pointer;
@@ -133,6 +144,7 @@ body {
     transition: opacity 1s ease-in-out;
     opacity: 0;
     z-index: 0;
+    border-radius: 0 0 0 80px;
 }
 .hero-bg.visible { opacity: 1; }
 .hero-overlay {
@@ -162,6 +174,74 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
 }
+
+
+/* --- サブタイトル --- */
+
+.sub-title {
+    display: flex;
+    justify-content: center; /* 横方向中央 */
+    align-items: center;     /* 縦方向中央（高さがある場合） */
+    height: 100px;           /* 必要に応じて高さを指定 */
+    padding:200px 0 200px  0;
+}
+
+.sub-title .gotrip img {
+    display: block;          /* imgの余白を消す */
+    max-width: 100%;         /* 横幅の調整 */
+    height: auto;
+}
+
+.sub-fot {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* PC時の横並び間隔 */
+  }
+  
+  .ride {
+    display: flex;
+    flex-direction: column; /* Rideとテキストを縦に */
+    align-items: center;
+    gap: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .sub-fot {
+      flex-direction: column; /* スマホ時は縦並び */
+      align-items: center;
+      gap: 30px; /* 縦積みの間隔 */
+    }
+  
+    .ride,
+    .nicesky,
+    .gotrip {
+      max-width: 80%;  /* 画面幅に合わせて縮小 */
+      margin: 0 auto;  /* 中央寄せ */
+    }
+  
+    .ride img,
+    .nicesky img,
+    .gotrip img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+
+  /* --- 仕切り（伝統を感じる） --- */
+.sikiri-tradition img{
+    display: block;          /* imgの余白を消す */
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .sikiri-tradition {
+      max-width: 80%;  /* 画面幅に合わせて縮小 */
+      margin: 0 auto;  /* 中央寄せ */
+    }
+  }
 
 /* --- カテゴリナビ --- */
 .category-nav {
@@ -230,15 +310,19 @@ body {
     gap: 20px;
     overflow-y: auto;       /* 高さを超えたらスクロール */
     max-height: 80vh;       /* 画面高さに収まる */
-    border-radius: 20px;
+    border-radius: 0 0 0 60px;
     padding: 10px;
     background: #fff8f0;
+    
 }
 
 .latest-topics h2 {
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 15px;
+    font-family: "Zen Old Mincho", serif;
+    font-style: normal;
+
 }
 
 .news ul {
@@ -279,8 +363,7 @@ body {
     grid-template-columns: 1fr 1fr; /* 左右2列 */
     gap: 60px 40px;                 /* 行・列の余白 */
     max-width: 900px;
-    margin: 80px auto;
-    
+    margin: 80px auto;   
 }
 
 .block {
@@ -291,7 +374,6 @@ body {
     line-height: 1.8;
 }
 
-/* 左列：文章＋画像 */
 .block.left img {
     width: 300px;
     opacity: 0;
@@ -300,18 +382,11 @@ body {
 }
 
 .block.right img {
-    width: 500px;
-    opacity: 0;
-    transform: scale(0.7);
-    border-radius: 20px 20px;
-}
-/* 右列：縦長画像 */
-.block.left img.special {
-    width: 100%;        /* 右列は横幅いっぱい */
-    max-width: 500px;   /* 必要に応じて最大幅 */
+    width: 300px;
     opacity: 0;
     transform: scale(0.7);
 }
+
 
 /* ジグザグ配置 */
 .block.left:nth-child(odd) { transform: translateY(60px); }
@@ -332,20 +407,47 @@ body {
     100% { transform: scale(1); }
 }
 
-.text img { width: 300px; }
-
-.pop, .special {
+.pop{
     opacity: 0;
     transform: scale(0.7);
   }
   
+  /*sikiri2*/
+  .block.right img.tall {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .block.right img.tall {
+      max-width: 90%; /* スマホでは画面幅の9割に縮小 */
+    }
+  }
+  
+   /*sikiri3*/
+   .block.left img.tall {
+    width: 500px;
+    max-width: 600px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .block.right img.tall {
+      max-width: 90%; /* スマホでは画面幅の9割に縮小 */
+    }
+  }
   /* 出現（ポン！） */
-  .pop.show, .special.show {
+  .pop.show{
     animation: popBounce 1s ease-out forwards;
   }
   
   /* 消える（フワッと縮む） */
-  .pop.hide, .special.hide {
+  .pop.hide{
     animation: popFadeOut 0.8s ease-in forwards;
   }
   
