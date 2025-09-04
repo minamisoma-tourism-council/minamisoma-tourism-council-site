@@ -222,30 +222,56 @@ body {
     margin: 80px auto;
 }
 
-/* 右縦長列 */
 .latest-topics {
-    width:150%;
+    width: 100%;            /* 左列に比べて幅調整 */
+    max-width: 300px;       /* 必要に応じて */
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-height: 100%; /* 左列に合わせる高さ調整はJSで可能 */
-    overflow-y: auto; /* 内容が多くてもスクロール可能 */
-    border-radius: 20px 20px;
+    overflow-y: auto;       /* 高さを超えたらスクロール */
+    max-height: 80vh;       /* 画面高さに収まる */
+    border-radius: 20px;
+    padding: 10px;
+    background: #fff8f0;
 }
 
-.latest-topics img{
-    width: 500px;
-}
 .latest-topics h2 {
-    margin-bottom: 15px;
     font-size: 1.5rem;
     text-align: center;
+    margin-bottom: 15px;
 }
 
-.topic {
-    background: #fff;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+.news ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.news li {
+    margin-bottom: 12px;
+}
+
+.news .date {
+    font-size: 12px;
+    color: #888;
+    display: block;
+}
+
+.news a {
+    color: #333;
+    text-decoration: none;
+}
+
+.news a:hover {
+    color: #d35400;
+    text-decoration: underline;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .land-container {
+        grid-template-columns: 1fr; /* ニュースが下に回り込む */
+    }
 }
 /* --- ジグザグ配置 --- */
 .zigzag {
@@ -335,6 +361,59 @@ body {
     100% { transform: scale(0.6); opacity: 0; }
   }
  
+  /* ニュース欄 */
+.news {
+    background: #fff8f0;
+    padding: 20px;
+    border-radius: 12px;
+    font-family: "Kiwi Maru", serif;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-y: auto;
+    max-height: 80vh; /* 画面の高さに収まるように */
+  }
+  
+  .news h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .news ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .news li {
+    margin-bottom: 12px;
+  }
+  
+  .news .date {
+    font-size: 12px;
+    color: #888;
+    display: block;
+  }
+  
+  .news a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .news a:hover {
+    color: #d35400;
+    text-decoration: underline;
+  }
+  
+ /* スマホ対応：ジグザグ縦並び */
+@media (max-width: 768px) {
+    .zigzag {
+        grid-template-columns: 1fr;
+        gap: 40px 20px;
+    }
+    .block.left, .block.right { transform: translateY(0); }
+    .latest-topics { max-width: 100%; }
+}
+
 /* --- メインカード --- */
 .main {
     margin: 0 auto;
