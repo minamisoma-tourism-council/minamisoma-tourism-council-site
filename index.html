@@ -1,252 +1,274 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>南相馬市観光事業実行委員会</title>
-  <meta name="description" content="みなみそうまの観光協会の統一組織である南相馬市観光事業実行委員会がお届けする最新観光情報の市公式観光ページ。馬の足音に導かれる、南相馬の旅を。">
-  <meta name="keywords" content="みなみそうま、南相馬観光,南相馬観光協会,かしま観光協会,小高観光協会,南相馬,観光,物産展,馬,相馬野馬追,旅,鹿島,小高,原町,観光事業,観光事業実行委員会,観光協会">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="img/logo.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>みなみそうまを旅する。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Kaisei+HarunoUmi&family=Kiwi+Maru&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Sawarabi+Gothic&family=Sawarabi+Mincho&family=Shippori+Antique&family=Yuji+Syuku&family=Zen+Old+Mincho&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- ================= スプラッシュ ================= -->
-  <div id="splash">
-    <img src="img/logo.svg" alt="Loading..." class="splash-logo">
-  </div>
-
-  <!-- ================= 本体 ================= -->
-  <div id="main-content">
-
-    <!-- ===== ヘッダー ===== -->
-    <header class="header">
-      <nav class="navbar">
-        <a href="index.html" class="logo">
-          <img src="img/logo.svg" alt="Logo">
-        </a>
-    </header>
-
-    <!-- ===== ヒーロー ===== -->
-    <section class="hero">
-      <div class="hero-overlay">
-        <img src="img/wave.png" alt="キャッチコピー">
-      </div>
-      <div class="hero-content"></div>
-    </section>
-   
-    <!-- ===== ナビゲーション ===== -->
-   
-   <!-- <ul class="nav-list">
-        <li>
-          <a href="#recommend">
-            <span class="jp">おすすめ</span>
-            <span class="en">recommend</span>
-          </a>
-        </li>
-        <li>
-          <a href="#pickup">
-            <span class="jp">ピックアップ</span>
-            <span class="en">pickup</span>
-          </a>
-        </li>
-      </ul>
-      <div class="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </nav>-->
-
-    <!-- ===== サブタイトル ===== -->
-    <section class="sub-title">
-        <div class="gotrip">      
-            <img src="img/gotrip.svg" alt="">
-        </div>  
-    </section>
-
-    <section class="sub-fot">
-        <div class="nicesky">
-            <img src="img/sky.svg" alt="">
+    <!--slideshow-->
+    <section class="slideshow">
+        <div class="slide active">
+          <img src="img/wave.svg" alt="スライド1">
+          <div class="overlay">
+            <img src="img/text-wave.svg" alt="文字1">
+          </div>
         </div>
-
-        <div class="ride">
-            <img src="img/ride.svg" alt="">
-            <img src="img/ride-text.svg" alt="">
+        <div class="slide">
+          <img src="img/wind.svg" alt="スライド2">
+          <div class="overlay">
+            <img src="img/text-wind.svg" alt="文字2">
+          </div>
         </div>
-    </section>
+        <div class="slide">
+          <img src="img/horse.svg" alt="スライド3">
+          <div class="overlay">
+            <img src="img/text-horse.svg" alt="文字3">
+          </div>
+        </div>
+      </section>
+
+
+
+      <section class="link-bar">
+        <nav>
+          <a href="https://minamisomakanko.org/" target="_blank">南相馬観光協会</a>
+          <a href="https://www.kashima-kankou.jp/" target="_blank">かしま観光協会</a>
+          <a href="https://odaka6014.jp/" target="_blank">小高観光協会</a>
+          <a href="https://www.city.minamisoma.lg.jp/tourist/index.html" target="_blank">南相馬市</a>
+          <a href="https://evnami-kitaizumi.com/" target="_blank">えぶなみ</a>
+          <a href="https://soma-nomaoi.jp/" target="_blank">相馬野馬追</a>
+        </nav>
+      </section>
+
+
+
+
+      <!--intro-->
+      <section class="intro">
+        <div class="intro-item pop">
+          <img src="img/minamisomaofjapan.png" alt="南相馬市">
+          <div class="text">
+            <h2>みなみそうまを旅する。</h2>
+            <p>
+              歴史と伝統が息づくまち、南相馬市。<br>
+              雄壮な相馬野馬追から、海や自然が広がる日常まで。<br>
+              この土地ならではの魅力を発見しよう。
+            </p>
+          </div>
+        </div>
+      </section>
+
+<!-- カードナビゲーション -->
+<section class="card-nav">
+    <div class="card wave" data-target="#wave">
+      <div class="card-content">
+        <img src="img/wave.svg" alt="波の画像">
+        <div class="text">
+          <h3>波を感じる</h3>
+          <p>太平洋に面した南相馬。寄せては返す波の音と海風が、旅人の心を癒します。</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card wind" data-target="#wind">
+      <div class="card-content">
+        <img src="img/wind.svg" alt="風の画像">
+        <div class="text">
+          <h3>新しい風を感じる</h3>
+          <p>歴史に寄り添いながらも、新しい挑戦が息づくまち。変化と可能性に触れてみて。</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card horse" data-target="#horse">
+      <div class="card-content">
+        <img src="img/horse.svg" alt="馬の画像">
+        <div class="text">
+          <h3>馬に触れる</h3>
+          <p>相馬野馬追で受け継がれる馬事文化。馬と人の絆を体感する特別な時間を。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <div class="logo">
+    <img src="img/logo.svg" alt="ロゴ">
+</div>
+
+
+  <section id="wave" class="article-section">
+    <h2>波を感じる</h2>
+    <div class="article-row">
+      <div class="article-img left">
+        <img src="img/wave01.jpg" alt="波1" class="pop-img">
+      </div>
+      <div class="article-text">
+        <p>南相馬の海岸線は、ただ眺めるだけではなく、歩き、風を感じ、波音に包まれる体験そのものが魅力です。  
+            朝焼けに照らされる砂浜、昼間の太陽の煌めき、夕暮れの柔らかい光…  
+            季節や時間によって表情を変える波が、訪れる人の心をゆったりと解きほぐしてくれます。  
+            浜辺でのんびり散歩すれば、地元の小さな漁船や釣り人の姿も見られ、日常とは違う時間の流れに身を委ねることができます。  
+            海沿いのカフェで地元の海鮮を味わいながら、潮風を感じるひとときもおすすめです。</p>
+      </div>
+      <div class="article-img right">
+        <img src="img/wave02.jpg" alt="波2" class="pop-img">
+      </div>
+    </div>
+    <div class="article-row">
+      <div class="article-img left">
+        <img src="img/wave03.jpg" alt="波3" class="pop-img">
+      </div>
+      <div class="article-text">
+        <h3>毎日波がある</h3>
+        <p>浜辺を歩けば、新しい出会いが待っています。風のにおい、砂浜の感触、そのすべてが心を震わせます。</p>
+      </div>
+       <!--
+      <div class="article-img right">
+        <img src="img/wave04.jpg" alt="波4" class="pop-img">
+      </div>
+      -->
+    </div>
+  </section>
+  
+
+<section id="wind" class="article-section">
+    <h2>新しい風を感じる</h2>
+    <div class="article-row">
+      <div class="article-img left">
+        <img src="img/wind01.jpg" alt="風1" class="pop-img">
+      </div>
+      <div class="article-text">
+        <p>
+            南相馬は、古き良き文化とともに、新しい挑戦が日々生まれる街です。  
+            街を歩けば、若い世代が開いた新しいお店や、地域の課題に挑むプロジェクトが点在しています。  
+            古民家をリノベーションしたカフェやショップ、アート作品が街角にひょっこり現れる瞬間など、散策の楽しみは無限大です。  
+            地元の人と話すことで、地域の魅力や挑戦の背景を知ることもでき、新しい風に触れる体験が得られます。  
+            歩くだけでワクワクする街、南相馬の「今」を感じてみてください。
+        </p>
+        </div>
+      <div class="article-img right">
+        <img src="img/wind02.jpg" alt="風2" class="pop-img">
+      </div>
+    </div>
+    <div class="article-row">
+      <div class="article-img left">
+        <img src="img/wind03.jpg" alt="風3" class="pop-img">
+      </div>
+      <div class="article-text">
+        <h3>新しい挑戦のまち</h3>
+        <p>新しいお店や取り組みが日々生まれ、街全体にフレッシュな息吹をもたらしています。歩くだけでワクワクする街です。</p>
+      </div>
+      <!--
+      <div class="article-img right">
+        <img src="img/wind04.jpg" alt="風4" class="pop-img">
+      </div>
+      -->
+    </div>
+  </section>
+  
+  <section id="horse" class="article-section">
+    <h2>馬に触れる</h2>
+    <div class="article-row">
+      <div class="article-img left">
+        <img src="img/horse01.jpg" alt="馬1" class="pop-img">
+      </div>
+      <div class="article-text">
+        <p>
+            南相馬は騎馬文化の街として知られ、甲冑姿の騎馬武者が躍動する「相馬野馬追」の舞台です。  
+            祭りの日以外でも、牧場や乗馬体験施設で馬と触れ合うことができます。  
+            馬の大きな瞳や柔らかい毛並みに触れると、日常では味わえない躍動感と癒やしを同時に感じることができます。  
+            子どもから大人まで楽しめる乗馬体験では、馬と心を通わせる喜びや、騎馬文化の歴史の一端に触れることもできます。  
+            自然に囲まれた牧場で、馬と一緒に過ごす時間は、南相馬の旅の中で忘れられない思い出になるでしょう。
+        </p>
+        </div>
+      <div class="article-img right">
+        <img src="img/horse02.jpg" alt="馬2" class="pop-img">
+      </div>
+    </div>
+    <div class="article-row">
+      <div class="article-img left">
+        <img src="img/horse03.jpg" alt="馬3" class="pop-img">
+      </div>
+      <div class="article-text">
+        <h3>馬と共に</h3>
+        <p>牧場や乗馬体験では、馬との距離がぐっと近くなり、忘れられない思い出が生まれます。日常を少しだけ離れて、馬の世界に浸ってみましょう。</p>
+      </div>
+       <!--
+      <div class="article-img right">
+        <img src="img/horse04.jpg" alt="馬4" class="pop-img">
+      </div>
+    -->
+    </div>
+  </section>
+
+
+  <section class="events">
+    <div class="events-header">
+        <h2>トピック</h2>
+        <p>topic</p>
+        <div class="wave-line"></div>
+    </div>
+    <div class="event-cards">
+        <!-- イベントカード1 -->
+        <div class="event-card">
+            <div class="event-image">
+                <img src="img/marche.png" alt="イベント1">
+                <div class="event-area">はらまちエリア</div>
+            </div>
+            <div class="event-info">
+                <h3 lcass="event-title">Marche-マルシェ-in KITAIZUMI SURF FESTIVAL</h3>
+                <p class="event-date">2025年10月3日(金)〜5日(日)</p>
+                <p class="event-location">北泉海浜総合公園</p>
+                <p class="event-desc">サーフィン大会とマルシェの複合イベント！</p>
+            </div>
+        </div>
+        
+        <!-- イベントカード2 -->
+
+    <!--
+        <div class="event-card">
+            <div class="event-image">
+                <img src="img/event2.jpg" alt="イベント2">
+                <div class="event-area">おだか</div>
+            </div>
+            <div class="event-info">
+                <p class="event-date">2025年11月12日</p>
+                <p class="event-location">おだか体育館</p>
+                <p class="event-desc">冬のクラフトマーケット。手作り雑貨やフードを楽しめます。</p>
+            </div>
+        </div>
+    -->
+        <!-- イベントカード3 -->
     
 
-     <!-- ===== サブタイトル ===== -->
-<section class="sikiri">
-    <div class="sikiri-tradition">
-        <img src="img/sikiri.svg" alt="">
+    <!--
+        <div class="event-card">
+            <div class="event-image">
+                <img src="img/event3.jpg" alt="イベント3">
+                <div class="event-area">かしま</div>
+            </div>
+            <div class="event-info">
+                <p class="event-date">2025年12月20日</p>
+                <p class="event-location">かしまホール</p>
+                <p class="event-desc">クリスマスコンサート。地域の音楽団体による演奏会。</p>
+            </div>
+        </div>
     </div>
+    -->
 </section>
 
-    <!-- ===== ジグザグ画像 ===== -->
-    <section id="land" class="land">
-        <div class="land-container">
-            
-        <!-- 左ジグザグ列 -->
-            <div class="zigzag">
+<footer class="site-footer">
+    <h3>南相馬市観光事業実行委員会</h3>
+    <p>南相馬市</p>
 
-                <div class="block left">
-                    <img src="img/nomaoi.png" alt="" class="pop">
-                    <p>福島県南相馬市は、国の重要無形民俗文化財「相馬野馬追」
-                        で知られる歴史と伝統のまち。甲冑姿の騎馬武者が躍動する勇壮な祭りは、
-                        地域の誇りと文化を今に伝えています。</p>
-                </div>
-      
-                <div class="block right">
-                    <img src="img/text.svg" alt="text" class="pop">
-                </div>
-      
-                <div class="block left">
-                    <img src="img/uma.svg" alt="uma" class="pop">
-                </div>
-      
-                <div class="block right">
-                    <img src="img/sikiri2.svg" alt="" class="pop tall">
-                </div>
-      
-                <div class="block left">
-                    <img src="img/sikiri3.svg" alt="hozo" class="pop tall">
-                </div>
-
-                <div class="block">
-                    <img src="img/hozo.svg" alt="hozo" class="pop">
-                </div>
-            </div>
-        
-           <!-- 右縦長列（最新トピック） -->
-    <div class="latest-topics">
-        <!--<img src="img/PL021-1.jpg" alt="">-->
-       
-     <!-- ニュース欄 -->
-     <aside class="news">
-        <h2>最新情報</h2>
-        <ul id="news-list"></ul>
-      </aside>
-    </div>
-
-  </div> <!-- land-container -->
-</section>
+</footer>
 
 
-
-    <section class="section-colored">
-        <div class="content">
-        <!-- 谷型SVG -->
-        <svg class="section-wave" viewBox="0 0 100 20" preserveAspectRatio="none">
-          <path d="M0,0 L50,20 L100,0 L100,20 L0,20 Z" fill="#f5f5f5"/>
-        </svg>
-      
-      
-         
-      
-
-    <!-- ===== おすすめ ===== -->
-    <section id="recommend" class="main">
-      <img src="img/Recommend.png" alt="recommend-title">
-      <div class="recommend">
-        <div class="card">
-          <div class="card-img">
-            <img src="img/ebunami.svg" alt="えぶなみ">
-          </div>
-          <div class="area-2">はらまちエリア</div>
-          <div class="kinds">spot</div>
-          <div class="card-text">
-            <h2>えぶなみ</h2>
-            <p></p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-img">
-            <img src="img/marche.png" alt="marche">
-          </div>
-          <div class="area-2">はらまちエリア</div>
-          <div class="kinds">event</div>
-          <div class="card-text">
-            <h2>Marche-マルシェ-<br>in Kitaizumi Surf Festival 2025</h2>
-            <p>日時:10月3日(金)〜5日(日)10時~16時<br>※最終日は14時まで<br>場所:北泉海岸総合公園</p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-img">
-            <img src="img/horsevalue.avif" alt="Horse Value">
-          </div>
-          <div class="area-3">おだかエリア</div>
-          <div class="kinds">experience</div>
-          <div class="card-text">
-            <h2>Horse Value</h2>
-            <p>南相馬市小高区川房字南石名坂28-1</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ピックアップ ===== -->
-    <section id="pickup" class="main">
-      <img src="img/Pick up.png" alt="pickup-title">
-      <div class="pickup">
-
-        <div class="card">
-          <a href="pickup01.html" target="_blank">
-            <div class="card-content">
-              <div class="area-1">市内</div>
-              <div class="kinds">gourmet</div>
-              <div class="card-text">
-                <h2>駅近グルメスポット８選！</h2>
-                <p>地元で愛される駅近グルメをご紹介！</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="pickup02.html" target="_blank">
-            <div class="card-content">
-              <div class="area-2">市内</div>
-              <div class="kinds">all</div>
-              <div class="card-text">
-                <h2>1日周遊ドライブコース</h2>
-                <p>馬に乗って、歴史に触れて、美味しい食事に感動する、南相馬のいいとこ取りコースをご紹介！</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="pickup03.html" target="_blank">
-            <div class="card-content">
-              <div class="area-3">市内</div>
-              <div class="kinds">experience</div>
-              <div class="card-text">
-                <h2>体験&アクティビティ</h2>
-                <p>海岸をトレッキングして馬と過ごす、贅沢な時間♪</p>
-              </div>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== フッター ===== -->
-    <footer class="footer">
-      <div class="footer-bottom">
-        <p>南相馬市観光事業実行委員会 All Rights Reserved.</p>
-      </div>
-    </footer>
-
-  </div><!-- /main-content -->
-
-
-</div>
-</section>
-
-  <script src="script.js"></script>
+      <script src="script.js"></script>
 </body>
-</html>
