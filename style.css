@@ -1,57 +1,84 @@
 /* --- 全体 --- */
 body{
-
+    font-family: "Kiwi Maru", "Noto Serif JP", serif;
     margin:0;
-
-        font-family: "Kaisei HarunoUmi", serif;
-        font-weight: 400;
-        font-style: normal;
-        background:#fff;
-    color:#111;
+    background-color: #fdf5e6; /* 和紙風ベース色 */
+    color: #222;
     scroll-behavior: smooth;
 }
 
+/* --- Hero / Slideshow --- */
 .slideshow {
     position: relative;
     width: 100%;
-    height: 80vh; /* 高さは調整 */
+    height: 80vh;
     overflow: hidden;
-  }
-  
-  .slide {
+}
+
+.slide {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out; /* フェード */
-  }
-  
-  .slide img {
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-  
-  .slide .overlay {
+}
+
+.slide .overlay {
     position: absolute;
     top: 50%;
     left: 55%;
     transform: translate(-50%, -50%);
-  }
-  
-  .slide .overlay img {
-    max-width: 70%; /* 文字画像のサイズ */
-  }
-  
-  .slide.active {
+}
+
+.slide .overlay img {
+    max-width: 70%;
+}
+
+.slide.active {
     opacity: 1;
     z-index: 1;
-  }
+}
 
+/* Hero文字ふわっと */
+.overlay img {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
+}
 
-/***link-bar****/
+.slide.active .overlay img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ロゴ */
+.logo {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* 下セクションと少し重なる */
+.hero, .slideshow {
+    position: relative;
+    margin-top: 50px;
+}
+
+/* --- Link Bar --- */
 .link-bar {
     text-align: center;
     margin: 40px 0;
@@ -63,281 +90,210 @@ body{
     padding: 0 15px;
     font-weight: 600;
     font-size: 1rem;
-    color: #000;
+    color: #222;
     text-decoration: none;
-    border-bottom: 3px solid #000; /* 太めの下線 */
+    border-bottom: 3px solid #222;
     transition: color 0.3s, border-color 0.3s;
 }
 
-/* ホバー時に色と下線の色を変化 */
 .link-bar nav a:hover {
-    color: #0077cc;          /* 好きなカラーに変更可 */
-    border-color: #0077cc;
+    color: #8b0000; /* 古典的な深い赤 */
+    border-color: #8b0000;
 }
 
-/* 縦線で区切る（最後のリンクには付けない） */
 .link-bar nav a:not(:last-child)::after {
     content: "";
     display: inline-block;
     width: 1px;
     height: 16px;
-    background-color: #000;
+    background-color: #222;
     margin-left: 15px;
     vertical-align: middle;
 }
 
-/* ロゴ用 */
-.logo {
-    position: absolute;      /* 絶対配置で右端へ */
-    top: 20px;               /* 上から少し余白 */
-    right: 20px;             /* 右端に配置 */
-    z-index: 10;             /* 下のセクションより前面に表示 */
-}
-
-.logo img {
-    width: 100px;            /* 小さめのサイズ */
-    height: auto;
-}
-
-/* 下のセクションに少し重なるようにする場合 */
-.hero {
-    position: relative;       /* ロゴと重なるために基準を作る */
-    margin-top: 50px;         /* 調整用の余白 */
-}
-
-
-  /***intro***/
-
-  /* 横並び配置 */
+/* --- Intro Section --- */
 .intro {
     max-width: 1000px;
     margin: 100px auto;
     padding: 0 20px;
-  }
-  
-  .intro-item {
+}
+
+.intro-item {
     display: flex;
     align-items: center;
     gap: 40px;
-  }
-  
-  .intro-item img {
+}
+
+.intro-item img {
     width: 30%;
     border-radius: 10px;
-  }
-  
-  .intro-item .text {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.intro-item .text {
     flex: 1;
-  }
-  
-  .intro-item h2 {
-    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.intro-item h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
     margin-bottom: 10px;
-  }
-  
-  .intro-item p {
+    font-weight: 700;
+}
+
+.intro-item p {
     font-size: 1.1rem;
     line-height: 1.8;
-  }
-  
-  /* アニメーションの初期状態 */
-  .pop {
+}
+
+/* ポップアニメーション */
+.pop {
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease-out;
-  }
-  
-  /* 表示されたとき */
-  .pop.show {
+}
+
+.pop.show {
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  /* 消えるとき */
-  .pop.hide {
-    opacity: 0;
-    transform: translateY(50px);
-  }
+}
 
-
-  /*******/
- /* --- カードナビ全体 --- */
+/* --- Card Navigation --- */
 .card-nav {
     display: flex;
     gap: 20px;
     max-width: 1200px;
     margin: 80px auto;
     padding: 0 20px;
-  }
-  
-  /* --- 各カード --- */
-  .card {
+}
+
+.card {
     position: relative;
     flex: 1;
     height: 300px;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card:hover {
     transform: translateY(-5px);
-  }
-  
-  /* カード内画像 */
-  .card-content {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+}
+
+.card-content {
     position: relative;
     width: 100%;
     height: 100%;
-  }
-  
-  .card-content img {
+}
+
+.card-content img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-  }
-  
-  /* テキストが画像に重なる */
-  .card .text {
+}
+
+.card .text {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 50%; /* 上半分に文字を配置 */
+    height: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.6); /* パステル背景の透明感 */
-    color: #000;
-    border-bottom-right-radius: 12px;
+    background: rgba(255, 255, 240, 0.7); /* ほのかな和紙色 */
+    color: #222;
     border-bottom-left-radius: 12px;
-  }
-  
-  .card h3 {
+    border-bottom-right-radius: 12px;
+}
+
+.card h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-  }
-  
-  .card p {
+}
+
+.card p {
     font-size: 1rem;
     line-height: 1.5;
-  }
-  
-  /* --- テーマカラーごとの背景 --- */
-  .card.wave .text {
-    background: rgba(173, 216, 230, 0.7); /* 薄い青 (パステル) */
-  }
-  
-  .card.wind .text {
-    background: rgba(144, 238, 144, 0.7); /* 薄い緑 (パステル) */
-  }
-  
-  .card.horse .text {
-    background: rgba(255, 200, 150, 0.7); /* 薄いオレンジ (パステル) */
-  }
-  
- /* --- セクション全体 --- */
- .article-section {
+}
+
+/* テーマカラー */
+.card.wave .text { background: rgba(173, 216, 230, 0.6); }
+.card.wind .text { background: rgba(144, 238, 144, 0.6); }
+.card.horse .text { background: rgba(255, 200, 150, 0.6); }
+
+/* --- Article Section --- */
+.article-section {
     max-width: 1000px;
     margin: 120px auto;
     padding: 0 20px;
-  }
-  
-  .article-section h2 {
+}
+
+.article-section h2 {
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 60px;
-  }
-  
-  .article-row {
+    font-weight: 700;
+}
+
+.article-row {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
     margin-bottom: 60px;
-  }
-  
-  .article-text {
+}
+
+.article-text {
     max-width: 500px;
     text-align: center;
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #000;
-  }
-  
-  .article-img {
+    color: #222;
+}
+
+.article-img {
     max-width: 200px;
-  }
-  
-  .article-img.left {
-    transform: translateY(30px);
-  }
-  .article-img.right {
-    transform: translateY(-30px);
-  }
-  
-  .article-img img {
+}
+
+.article-img.left { transform: translateY(30px); }
+.article-img.right { transform: translateY(-30px); }
+
+.article-img img {
     width: 100%;
     border-radius: 12px;
     opacity: 0;
     transform: scale(0.8);
     transition: all 0.8s ease;
-  }
-  
-  .pop-img.show {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  /* スマホ対応 */
-  @media (max-width: 768px) {
-    .article-row {
-      flex-direction: column;
-      gap: 20px;
-    }
-    .article-img.left,
-    .article-img.right {
-      transform: translateY(0);
-      max-width: 80%;
-    }
-    .article-text {
-      max-width: 100%;
-    }
-  }
-  
-  /* セクションごとのパステル背景（カード色） */
-  #wave { background-color: #cce7ff1a; }   /* 薄い青 */
-  #wind { background-color: #d4f7d41a; }   /* 薄い緑 */
-  #horse { background-color: #ffe5c91a; }  /* 薄いオレンジ */
-
-
-
-
-
-
-
-  
-
-  /* イベントセクション全体 */
-.events {
-    padding: 100px 20px;
-    background-color: #f8f8f8;
 }
 
-/* ヘッダータイトル＋波線 */
+.pop-img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@media (max-width: 768px) {
+    .article-row { flex-direction: column; gap: 20px; }
+    .article-img.left, .article-img.right { transform: translateY(0); max-width: 80%; }
+    .article-text { max-width: 100%; }
+}
+
+/* --- Events Section --- */
+.events {
+    padding: 100px 20px;
+    background-color: #f5f2ec;
+}
+
 .events-header {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.events-header h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
+.events-header h2 { font-size: 2.5rem; margin-bottom: 10px; }
 .wave-line {
     width: 150px;
     height: 50px;
@@ -346,7 +302,6 @@ body{
     background-size: contain;
 }
 
-/* カードコンテナ */
 .event-cards {
     display: flex;
     gap: 40px;
@@ -354,80 +309,42 @@ body{
     flex-wrap: wrap;
 }
 
-/* カード1枚 */
 .event-card {
-    background-color: #fff;
+    background-color: #fff8f0;
     border-radius: 15px;
     overflow: hidden;
     width: 300px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     position: relative;
     opacity: 0;
     transform: translateY(50px);
     transition: all 0.8s ease;
 }
 
-/* 画像部分 */
-.event-image {
-    position: relative;
-}
-
-.event-image img {
-    width: 100%;
-    display: block;
-}
-
-/* 地域表示 */
+.event-image { position: relative; }
+.event-image img { width: 100%; display: block; }
 .event-area {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: rgba(255,255,255,0.9);
+    background-color: rgba(255,245,230,0.9);
     padding: 5px 10px;
     font-weight: bold;
     border-radius: 5px;
 }
 
-/* 情報部分 */
-.event-info {
-    padding: 20px;
-}
+.event-info { padding: 20px; }
+.event-date { font-weight: bold; margin-bottom: 5px; }
+.event-location { font-style: italic; margin-bottom: 10px; }
+.event-desc { font-size: 0.9rem; line-height: 1.5; }
 
-.event-date {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.event-location {
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.event-desc {
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-/* スクロール時に出現 */
 .event-card.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* スマホ用縦並び */
 @media (max-width: 768px) {
-    .event-cards {
-        flex-direction: column;
-        align-items: center;
-    }
+    .event-cards { flex-direction: column; align-items: center; }
 }
 
-.site-footer {
-    background-color: #333; /* 濃いグレー */
-    color: #fff;            /* 白文字 */
-    text-align: center;
-    padding: 80px 20px;     /* 縦幅広め */
-    font-size: 1.2rem;
-    font-weight: 500;
-    line-height: 1.5;
-}
+/*
