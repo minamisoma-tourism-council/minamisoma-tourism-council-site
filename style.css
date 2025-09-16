@@ -228,13 +228,13 @@ body {
   
   /* --- カードテーマカラー --- */
   .card.wave .text {
-    background: rgba(173, 216, 230, 0.7);
+    background: rgba(207, 228, 236, 0.7);
   }
   .card.wind .text {
-    background: rgba(144, 238, 144, 0.7);
+    background: rgba(219, 233, 219, 0.7);
   }
   .card.horse .text {
-    background: rgba(255, 200, 150, 0.7);
+    background: rgba(242, 219, 198, 0.7);
   }
   
   /* --- 記事セクション --- */
@@ -333,7 +333,7 @@ body {
     width: 150px;
     height: 50px;
     margin: 0 auto;
-    background: url('img/wave.svg') no-repeat center;
+    background: url('img/line.png') no-repeat center;
     background-size: contain;
   }
   
@@ -450,4 +450,8 @@ body {
     0% { transform: translate(-50%, -52%) rotate(-1deg); }
     50% { transform: translate(-50%, -48%) rotate(1deg); }
     100% { transform: translate(-50%, -52%) rotate(-1deg); }
+  }
+
+  .card:hover .text {
+    background: rgba(255, 255, 255, 0.8);
   }
