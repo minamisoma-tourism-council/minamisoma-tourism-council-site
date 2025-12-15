@@ -263,7 +263,7 @@ body {
   .text-block,
   .text-block.wide {
     margin: 0 auto;
-    max-width: 10%;
+    max-width: 90%;
   }
 
   .text-block p {
@@ -299,4 +299,21 @@ body {
   grid-column: span 2;
   width: 70%;
   justify-self: center;
+}
+
+.photo-stack {
+  margin: 4rem auto;
+  max-width: 320px;   /* ← これが超重要 */
+}
+
+@media (min-width: 375px) {
+  .photo-stack {
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 414px) {
+  .photo-stack {
+    max-width: 390px;
+  }
 }
