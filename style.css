@@ -1,4 +1,15 @@
-* { box-sizing: border-box; }
+/* =====================================================
+   1. Global / Reset
+===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 body {
   margin: 0;
@@ -7,11 +18,22 @@ body {
   background: #fff;
 }
 
+
+/* =====================================================
+   2. Layout
+===================================================== */
 .section {
   padding: 8rem 1.5rem;
 }
 
-/* HERO */
+.spacer {
+  height: 2rem;
+}
+
+
+/* =====================================================
+   3. HERO
+===================================================== */
 .hero {
   height: 80vh;
   display: flex;
@@ -28,7 +50,10 @@ body {
   margin-top: 0.5rem;
 }
 
-/* TEXT BLOCK */
+
+/* =====================================================
+   4. Text Block（文章設計の核）
+===================================================== */
 .text-block {
   max-width: 520px;
   margin-left: 10vw;
@@ -44,16 +69,27 @@ body {
   text-align: center;
 }
 
-.spacer {
-  height: 2rem;
-}
-
 .place {
   margin-top: 3rem;
   font-weight: 600;
 }
 
-/* EXPERIENCE */
+.note {
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: #444;
+}
+
+
+/* =====================================================
+   5. Experience
+===================================================== */
 .experience {
   position: relative;
 }
@@ -72,55 +108,70 @@ body {
   margin-right: 10vw;
 }
 
-.note {
-  font-size: 0.85rem;
-  margin-top: 2rem;
+
+/* =====================================================
+   6. Photo Moment（3枚レイアウト）
+===================================================== */
+.photo-moment {
+  padding: 10rem 1.5rem;
 }
 
-.link {
-  display: inline-block;
-  margin-top: 1rem;
-  text-decoration: none;
-  color: #444;
+.photo-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
 }
 
-/* STAY */
-.stay {
-  background: #f5f5f5;
+.photo-item {
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
-/* CTA */
-.cta-lead {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
 }
 
-.cta-list {
-  list-style: none;
-  padding: 0;
+/* あえてズラす */
+.photo-item.offset {
+  margin-top: 3rem;
 }
 
-.cta-list li {
-  margin: 0.8rem 0;
+
+/* =====================================================
+   7. Photo Stack（スマホ用）
+===================================================== */
+.photo-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin: 4rem auto;
+  max-width: 320px;
 }
 
-.cta-list a {
-  text-decoration: none;
-  color: #222;
+.photo-stack img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0;
 }
 
-@media (max-width: 768px) {
-  .text-block,
-  .experience.alt .text-block {
-    margin: 0 auto;
-  }
-
-  .exp-label {
-    position: static;
-    margin-bottom: 1rem;
-  }
+/* 1枚だけ強調 */
+.photo-stack img:nth-child(3) {
+  grid-column: span 2;
+  width: 70%;
+  justify-self: center;
 }
 
+
+/* =====================================================
+   8. Event
+===================================================== */
 .event {
   margin: 8rem auto;
 }
@@ -157,6 +208,8 @@ body {
   color: #555;
 }
 
+
+/* Event Detail */
 .event-detail {
   max-width: 720px;
   margin: 0 auto;
@@ -177,7 +230,38 @@ body {
   text-decoration: underline;
 }
 
-/* FADE IN */
+
+/* =====================================================
+   9. Stay / CTA
+===================================================== */
+.stay {
+  background: #f5f5f5;
+}
+
+.cta-lead {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-list {
+  list-style: none;
+  padding: 0;
+}
+
+.cta-list li {
+  margin: 0.8rem 0;
+}
+
+.cta-list a {
+  text-decoration: none;
+  color: #222;
+}
+
+
+/* =====================================================
+   10. Utility
+===================================================== */
+/* Fade In */
 .fade {
   opacity: 0;
   transform: translateY(24px);
@@ -189,51 +273,52 @@ body {
   transform: translateY(0);
 }
 
-/* PHOTO MOMENT */
-.photo-moment {
+/* Parallax Background */
+.parallax-bg {
+  background-image: url("img/photo01.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 10rem 1.5rem;
 }
 
-.photo-grid {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  gap: 4rem;
-  justify-content: center;
+.image-right {
+  padding: 8rem 0;
 }
 
-.photo-item {
-  width: 220px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
+.image-right-inner {
+  display: grid;
+  grid-template-columns: 1fr 4fr; /* 左1 / 右4 = 左が約1/5 */
+  align-items: center;
 }
 
-.photo-item img {
+/* 左の余白 */
+.image-right-spacer {
+  min-height: 1px;
+}
+
+/* 右の写真 */
+.image-right-photo img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  display: block;
   object-fit: cover;
-  border-radius: 18px;
 }
 
-/* わざとズラす */
-.photo-item.offset {
-  margin-top: 3rem;
-}
-
-/* スマホは縦積み */
 @media (max-width: 768px) {
-  .photo-grid {
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
+  .image-right-inner {
+    grid-template-columns: 20% 80%; /* スマホでも1:4を維持 */
   }
 
-  .photo-item.offset {
-    margin-top: 0;
+  .image-right {
+    padding: 6rem 0;
   }
 }
 
-/* ===== スマホ最適化 ===== */
+/* =====================================================
+   11. Media Queries
+===================================================== */
 @media (max-width: 768px) {
 
   body {
@@ -259,9 +344,9 @@ body {
     margin-top: 1rem;
   }
 
-  /* テキストは中央寄せに戻す（スマホだけ） */
   .text-block,
-  .text-block.wide {
+  .text-block.wide,
+  .experience.alt .text-block {
     margin: 0 auto;
     max-width: 90%;
   }
@@ -273,37 +358,23 @@ body {
   .exp-label {
     position: static;
     margin-bottom: 2rem;
-    text-align: left;
     font-size: 0.8rem;
   }
 
-}
+  .photo-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 
-.photo-stack {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin: 4rem auto;
-  max-width: 60%;
-}
+  .photo-item.offset {
+    margin-top: 0;
+  }
 
-.photo-stack img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 0px;
-}
-
-/* 1枚だけズラす（雑誌感） */
-.photo-stack img:nth-child(3) {
-  grid-column: span 2;
-  width: 70%;
-  justify-self: center;
-}
-
-.photo-stack {
-  margin: 4rem auto;
-  max-width: 320px;   /* ← これが超重要 */
+  .parallax-bg {
+    background-attachment: scroll;
+    background-position: center center;
+  }
 }
 
 @media (min-width: 375px) {
@@ -318,8 +389,3 @@ body {
   }
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
