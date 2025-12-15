@@ -316,3 +316,13 @@ h1 {
   background-attachment: fixed;
   }
   }
+
+  img{
+   max-width: 400px; 
+   border-radius: 0 200px 0 0;
+   filter: brightness(0.8) contrast(1.05);
+  }
+  .photo02{
+    max-width: 300px;
+    margin: 0 auto;
+  }
