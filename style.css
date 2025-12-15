@@ -263,7 +263,7 @@ body {
   .text-block,
   .text-block.wide {
     margin: 0 auto;
-    max-width: 90%;
+    max-width: 50%;
   }
 
   .text-block p {
