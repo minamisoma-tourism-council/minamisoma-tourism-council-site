@@ -232,3 +232,71 @@ body {
     margin-top: 0;
   }
 }
+
+/* ===== スマホ最適化 ===== */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 6rem 1.2rem;
+  }
+
+  .hero {
+    height: 90vh;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .hero-inner h1 {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+
+  .hero-inner p {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  /* テキストは中央寄せに戻す（スマホだけ） */
+  .text-block,
+  .text-block.wide {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .text-block p {
+    line-height: 2.2;
+  }
+
+  .exp-label {
+    position: static;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-size: 0.8rem;
+  }
+
+}
+
+.photo-stack {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin: 4rem auto;
+  max-width: 60%;
+}
+
+.photo-stack img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0px;
+}
+
+/* 1枚だけズラす（雑誌感） */
+.photo-stack img:nth-child(3) {
+  grid-column: span 2;
+  width: 70%;
+  justify-self: center;
+}
