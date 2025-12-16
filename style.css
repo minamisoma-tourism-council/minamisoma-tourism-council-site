@@ -21,6 +21,39 @@ img {
 }
 
 /* =====================================================
+ layout
+===================================================== */
+
+
+.layout-3col {
+  display: grid;
+  grid-template-columns: 1fr minmax(520px, 1fr) 1fr;
+}
+
+.center {
+  width: 100%;
+}
+.side {
+  position: relative;
+  background: #f5f5f5;
+}
+
+@media (max-width: 768px) {
+
+  .layout-3col {
+    grid-template-columns: 1fr;
+  }
+
+  .side {
+    display: none;
+  }
+
+  .center {
+    width: 100%;
+  }
+}
+
+/* =====================================================
 2. Section / Spacing
 ===================================================== */
 .section {
@@ -76,7 +109,7 @@ img {
 .place {
   margin-top: 3rem;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .note {
