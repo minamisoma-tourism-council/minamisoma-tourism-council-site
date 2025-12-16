@@ -1,328 +1,254 @@
 /* =====================================================
-Mobile First / Smart Layout CSS
-（構造は変えず、順序と役割を整理）
+1. Reset / Global
 ===================================================== */
-/* デフォルトのスタイル: スマートフォンを想定 */
-body {
-  font-size: 14px;
-  color: #333;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 100%;
-  padding: 10px;
-}
-
-h1 {
-  font-size: 20px;
-}
-
-/* 他の要素も同様にスマホ向けに設計 */
-
-/* =====================================================
-	1.	Reset / Global
-===================================================== */
-
-•	{
+* {
   box-sizing: border-box;
-  }
-  
-  img {
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Serif JP', serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #222;
+  background: #fff;
+}
+
+img {
   max-width: 100%;
   height: auto;
   display: block;
-  }
-  
-  body {
-  margin: 0;
-  font-family: ‘Noto Serif JP’, serif;
-  color: #222;
-  background: #fff;
-  font-size: 15px; /* スマホ基準 */
-  line-height: 1.6;
-  }
-  
-  /* =====================================================
-  2. Section / Spacing
-  ===================================================== */
-  .section {
-  padding: 6rem 1.2rem; 
 }
-  
-  .spacer {
+
+/* =====================================================
+2. Section / Spacing
+===================================================== */
+.section {
+  padding: 6rem 1.2rem;
+}
+
+.spacer {
   height: 2rem;
-  }
-  
-  /* =====================================================
-  3. HERO
-  ===================================================== */
-  .hero {
+}
+
+/* =====================================================
+3. HERO
+===================================================== */
+.hero {
   height: 90vh;
   display: flex;
   align-items: flex-end;
   padding: 2.5rem 1.5rem;
-  }
-  
-  .hero-inner h1 {
+}
+
+.hero-inner img {
+  margin-bottom: 1.5rem;
+}
+
+.hero-inner h1 {
   font-size: 2rem;
   line-height: 1.4;
   margin: 0;
-  }
-  
-  .hero-inner p {
+}
+
+.hero-inner p {
   font-size: 1rem;
   margin-top: 1rem;
-  }
-  
-  /* =====================================================
-  4. Text Block（文章の核）
-  ===================================================== */
-  .text-block {
+}
+
+/* =====================================================
+4. Text Block
+===================================================== */
+.text-block {
   max-width: 90%;
   margin: 0 auto;
   line-height: 2.2;
-  }
-  
-  .text-block.wide {
+}
+
+.text-block.wide {
   max-width: 90%;
-  }
-  
-  .text-block.center {
+}
+
+.text-block.center {
   text-align: center;
-  }
-  
-  .place {
+}
+
+.place {
   margin-top: 3rem;
   font-weight: 600;
-  }
-  
-  .note {
+  font-size: 2rem;
+}
+
+.note {
   font-size: 0.85rem;
   margin-top: 2rem;
-  }
-  
-  .link {
+}
+
+.link {
   display: inline-block;
   margin-top: 1rem;
   text-decoration: none;
   color: #444;
-  }
-  
-  /* =====================================================
-  5. Experience
-  ===================================================== */
-  .experience {
+}
+
+/* =====================================================
+5. Experience
+===================================================== */
+.experience {
   position: relative;
-  }
-  
-  .exp-label {
-  position: static; /* スマホでは自然配置 */
+  background: #f5f5f5;
+}
+
+.exp-label {
   margin-bottom: 2rem;
-  font-family: ‘Inter’, sans-serif;
+  font-family: 'Inter', sans-serif;
   letter-spacing: 0.15em;
   font-size: 0.8rem;
-  }
-  
-  /* =====================================================
-  6. Photo Moment（写真3枚）
-  ===================================================== */
-  .photo-moment {
-  padding: 6rem 1.2rem;
-  }
-  
-  .photo-grid {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  }
-  
-  .photo-item {
-  width: 100%;
-  max-width: 320px;
-  aspect-ratio: 1 / 1;
-  overflow: hidden;
-  }
-  
-  .photo-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 12px;
-  }
-  
-  /* =====================================================
-  7. Photo Stack（雑誌感）
-  ===================================================== */
-  .photo-stack {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  margin: 4rem auto;
-  max-width: 320px;
-  }
-  
-  .photo-stack img {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  }
-  
-  .photo-stack img:nth-child(3) {
-  grid-column: span 2;
-  width: 70%;
-  justify-self: center;
-  }
-  
-  /* =====================================================
-  8. Event
-  ===================================================== */
-  .event {
+}
+
+/* =====================================================
+6. Insert Photos（途中写真）
+===================================================== */
+.insert-photo {
   margin: 6rem auto;
-  }
-  
-  .event-list {
+  max-width: 320px;
+}
+
+.insert-photo img {
+  width: 100%;
+  border-radius: 0 180px 0 0;
+  filter: brightness(0.82) contrast(1.05);
+}
+
+
+
+/* =====================================================
+7. Event
+===================================================== */
+.event {
+  margin: 6rem auto;
+}
+
+.event-list {
   max-width: 90%;
   margin: 3rem auto 0;
-  }
-  
-  .event-card {
+}
+
+.event-card {
   display: block;
   padding: 1.5rem 0;
   border-bottom: 1px solid #ddd;
   color: #111;
   text-decoration: none;
-  }
-  
-  .event-date {
+}
+
+.event-date {
   font-size: 0.85rem;
   color: #777;
-  }
-  
-  .event-title {
+}
+
+.event-title {
   font-size: 1.05rem;
   margin: 0.4rem 0;
-  }
-  
-  .event-note {
+}
+
+.event-note {
   font-size: 0.9rem;
   color: #555;
-  }
-  
-  /* =====================================================
-  9. Stay / CTA
-  ===================================================== */
-  .stay {
+}
+
+/* =====================================================
+8. Stay / CTA
+===================================================== */
+.stay {
   background: #f5f5f5;
-  }
-  
-  .cta-lead {
+}
+
+.cta{
+  background: #f5f5f5;
+}
+
+.cta-lead {
   font-size: 1.1rem;
   margin-bottom: 2rem;
-  }
-  
-  .cta-list {
+}
+
+.cta-list {
   list-style: none;
   padding: 0;
-  }
-  
-  .cta-list li {
+}
+
+.cta-list li {
   margin: 1rem 0;
-  }
-  
-  .cta-list a {
+}
+
+.cta-list a {
   display: block;
   padding: 1rem 0;
   text-align: center;
   text-decoration: none;
   color: #222;
-  }
-  
-  /* =====================================================
-  10. Utility
-  ===================================================== */
-  .fade {
+}
+
+/* =====================================================
+9. Utility
+===================================================== */
+.fade {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  }
-  
-  .fade.is-visible {
+}
+
+.fade.is-visible {
   opacity: 1;
   transform: translateY(0);
-  }
-  
-  .parallax-bg {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 8rem 1.2rem;
-  }
-  
-  /* =====================================================
-  11. Tablet / PC Enhancement
-  ===================================================== */
-  @media (min-width: 769px) {
-  
+}
+
+/* =====================================================
+10. PC Enhancement
+===================================================== */
+@media (min-width: 769px) {
+
   body {
-  font-size: 16px;
-  }
-  
-  .section {
-  padding: 8rem 1.5rem;
-  }
-  
-  .hero {
-  height: 80vh;
-  padding: 4rem;
-  }
-  
-  .hero-inner h1 {
-  font-size: 2.4rem;
-  }
-  
-  .text-block {
-  max-width: 520px;
-  margin-left: 10vw;
-  }
-  
-  .text-block.wide {
-  max-width: 640px;
-  }
-  
-  .experience.alt .text-block {
-  margin-left: auto;
-  margin-right: 10vw;
-  }
-  
-  .exp-label {
-  position: absolute;
-  top: 0;
-  right: 10vw;
-  font-size: 0.9rem;
-  }
-  
-  .photo-grid {
-  flex-direction: row;
-  gap: 4rem;
-  }
-  
-  .photo-item {
-  width: 220px;
-  }
-  
-  .parallax-bg {
-  background-attachment: fixed;
-  }
+    font-size: 16px;
   }
 
-  img{
-   max-width: 400px; 
-   border-radius: 0 200px 0 0;
-   filter: brightness(0.8) contrast(1.05);
+  .section {
+    padding: 8rem 1.5rem;
   }
-  .photo02{
-    max-width: 300px;
-    margin: 0 auto;
+
+  .hero {
+    height: 80vh;
+    padding: 4rem;
   }
+
+  .hero-inner h1 {
+    font-size: 2.4rem;
+  }
+
+  .text-block {
+    max-width: 520px;
+    margin-left: 10vw;
+  }
+
+  .text-block.wide {
+    max-width: 640px;
+  }
+
+  .experience.alt .text-block {
+    margin-left: auto;
+    margin-right: 10vw;
+  }
+
+  .exp-label {
+    position: absolute;
+    top: 0;
+    right: 10vw;
+    font-size: 0.9rem;
+  }
+}
+
+.footer{
+  position: relative;
+  text-align: center;
+}
