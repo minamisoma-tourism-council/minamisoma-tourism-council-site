@@ -12,6 +12,8 @@ body {
   line-height: 1.6;
   color: #222;
   background: #fff;
+  background-image:url(img/bg.svg) ;
+  
 }
 
 img {
@@ -79,6 +81,7 @@ img {
 ===================================================== */
 .section {
   padding: 6rem 1.2rem;
+  
 }
 
 .spacer {
@@ -93,6 +96,7 @@ img {
   display: flex;
   align-items: flex-end;
   padding: 2.5rem 1.5rem;
+  
 }
 
 .hero-inner img {
