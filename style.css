@@ -174,7 +174,7 @@ img {
 
 .insert-photo img {
   width: 100%;
-  border-radius: 0 180px 0 0;
+  
   filter: brightness(0.82) contrast(1.05);
 }
 
@@ -309,4 +309,17 @@ img {
 .footer{
   position: relative;
   text-align: center;
+}
+
+
+.left-line-up{
+  align-content: center; 
+}
+
+.card-container {
+  display: flex;
+  gap: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  
 }
