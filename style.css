@@ -1,325 +1,1370 @@
-/* =====================================================
-1. Reset / Global
-===================================================== */
-* {
-  box-sizing: border-box;
-}
+/* =========================================
+   FROM MINAMISOMA
+   EVENT / CULTURE SITE
+========================================= */
 
-body {
-  margin: 0;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #222;
-  background: #fff;
-  background-image:url(img/bg.svg) ;
+
+/* =========================================
+   COLOR
+========================================= */
+
+:root {
+
+    /* 白い「部屋」 */
+    --room: #ffffff;
   
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* =====================================================
- layout : 3 column（center scroll / side fixed）
-===================================================== */
-
-/* 全体ラッパー */
-.layout-3col {
-  position: relative;
-}
-
-/* 中央コンテンツ */
-.center {
-  width: 40vw;              /* 中央カラム幅 */
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;               /* 左右より前面 */
-}
-
-/* 左右サイド */
-.side {
-  position: fixed;
-  top: 0;
-  width: 30vw;
-  height: 100vh;
-  background: #f5f5f5;
-  z-index: 1;
-}
-
-/* 左サイド */
-.side.left {
-  left: 0;
-}
-
-/* 右サイド */
-.side.right {
-  right: 0;
-}
-
-/* =====================================================
- Mobile
-===================================================== */
-@media (max-width: 768px) {
-
-  /* 左右は非表示 */
-  .side {
-    display: none;
+    /* 背景 */
+    --blue-1: #5f9fc4;
+    --blue-2: #4383ad;
+    --blue-3: #355f92;
+    --blue-4: #514f88;
+  
+    /* ブランド */
+    --indigo: #172a4d;
+  
+    /* アクセント */
+    --gold: #b79a5b;
+  
+    /* 文字 */
+    --text: #20242a;
+    --gray: #6f7378;
+  
+    /* 線 */
+    --line: #d9dde1;
   }
-
-  /* 中央は全幅 */
-  .center {
-    width: 100%;
-    margin: 0;
+  
+  
+  /* =========================================
+     RESET
+  ========================================= */
+  
+  * {
+    box-sizing: border-box;
   }
-}
-
-/* =====================================================
-2. Section / Spacing
-===================================================== */
-.section {
-  padding: 6rem 1.2rem;
   
-}
-
-.spacer {
-  height: 2rem;
-}
-
-/* =====================================================
-3. HERO
-===================================================== */
-.hero {
-  height: 90vh;
-  display: flex;
-  align-items: flex-end;
-  padding: 2.5rem 1.5rem;
   
-}
-
-.hero-inner img {
-  margin-bottom: 1.5rem;
-}
-
-.hero-inner h1 {
-  font-size: 2rem;
-  line-height: 1.4;
-  margin: 0;
-}
-
-.hero-inner p {
-  font-size: 1rem;
-  margin-top: 1rem;
-}
-
-/* =====================================================
-4. Text Block
-===================================================== */
-.text-block {
-  max-width: 90%;
-  margin: 0 auto;
-  line-height: 2.2;
-}
-
-.text-block.wide {
-  max-width: 90%;
-}
-
-.text-block.center {
-  text-align: center;
-}
-
-.place {
-  margin-top: 3rem;
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
-.note {
-  font-size: 0.85rem;
-  margin-top: 2rem;
-}
-
-.link {
-  display: inline-block;
-  margin-top: 1rem;
-  text-decoration: none;
-  color: #444;
-}
-
-/* =====================================================
-5. Experience
-===================================================== */
-.experience {
-  position: relative;
-  background: #f5f5f5;
-}
-
-.exp-label {
-  margin-bottom: 2rem;
-  font-family: 'Inter', sans-serif;
-  letter-spacing: 0.15em;
-  font-size: 0.8rem;
-}
-
-/* =====================================================
-6. Insert Photos（途中写真）
-===================================================== */
-.insert-photo {
-  margin: 6rem auto;
-  max-width: 320px;
-}
-
-.insert-photo img {
-  width: 100%;
+  html {
+    scroll-behavior: smooth;
+  }
   
-  filter: brightness(0.82) contrast(1.05);
-}
-
-
-
-/* =====================================================
-7. Event
-===================================================== */
-.event {
-  margin: 6rem auto;
-}
-
-.event-list {
-  max-width: 90%;
-  margin: 3rem auto 0;
-}
-
-.event-card {
-  display: block;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid #ddd;
-  color: #111;
-  text-decoration: none;
-}
-
-.event-date {
-  font-size: 0.85rem;
-  color: #777;
-}
-
-.event-title {
-  font-size: 1.05rem;
-  margin: 0.4rem 0;
-}
-
-.event-note {
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* =====================================================
-8. Stay / CTA
-===================================================== */
-.stay {
-  background: #f5f5f5;
-}
-
-.cta{
-  background: #f5f5f5;
-}
-
-.cta-lead {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.cta-list {
-  list-style: none;
-  padding: 0;
-}
-
-.cta-list li {
-  margin: 0.5rem 0;
-}
-
-.cta-list a {
-  display: block;
-  padding: 1rem 0;
-  text-align: center;
-  text-decoration: none;
-  color: #222;
-}
-
-/* =====================================================
-9. Utility
-===================================================== */
-.fade {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* =====================================================
-10. PC Enhancement
-===================================================== */
-@media (min-width: 769px) {
-
+  
   body {
-    font-size: 16px;
-  }
-
-  .section {
-    padding: 8rem 1.5rem;
-  }
-
-  .hero {
-    height: 80vh;
-    padding: 4rem;
-  }
-
-  .hero-inner h1 {
-    font-size: 2.4rem;
-  }
-
-  .text-block {
-    max-width: 520px;
-    margin-left: 0.5vw;
-  }
-
-  .text-block.wide {
-    max-width: 640px;
-  }
-
-  .experience.alt .text-block {
-    margin-left: auto;
-    margin-right: 10vw;
-  }
-
-  .exp-label {
-    position: absolute;
-    top: 0;
-    right: 10vw;
-    font-size: 0.9rem;
-  }
-}
-
-.footer{
-  position: relative;
-  text-align: center;
-}
-
-
-.left-line-up{
-  align-content: center; 
-}
-
-.card-container {
-  display: flex;
-  gap: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
   
-}
+    margin: 0;
+  
+    color:
+      var(--text);
+  
+    /*
+      明朝ではなくゴシック。
+  
+      Noto Sans JP
+      ↓
+      Inter
+  
+      の順で使い分けます。
+    */
+  
+    font-family:
+      "Noto Sans JP",
+      sans-serif;
+  
+    font-size:
+      14px;
+  
+    font-weight:
+      400;
+  
+    line-height:
+      1.9;
+  
+    letter-spacing:
+      0.04em;
+  
+    background:
+      linear-gradient(
+        180deg,
+        var(--blue-1) 0%,
+        var(--blue-2) 28%,
+        var(--blue-3) 62%,
+        var(--blue-4) 100%
+      );
+  }
+  
+  
+  img {
+  
+    display:
+      block;
+  
+    width:
+      100%;
+  
+    height:
+      auto;
+  }
+  
+  
+  a {
+  
+    color:
+      inherit;
+  
+    text-decoration:
+      none;
+  
+    transition:
+      opacity 0.25s ease;
+  }
+  
+  
+  a:hover {
+  
+    opacity:
+      0.65;
+  }
+  
+  
+  /* =========================================
+     3 COLUMN LAYOUT
+  ========================================= */
+  
+  .page-layout {
+  
+    width:
+      100%;
+  
+    min-height:
+      100vh;
+  
+    display:
+      grid;
+  
+    /*
+      中央は最大430px。
+  
+      左右は残ったスペース。
+    */
+  
+    grid-template-columns:
+      minmax(0, 1fr)
+      430px
+      minmax(0, 1fr);
+  }
+  
+  
+  /* =========================================
+     LEFT COLUMN
+  ========================================= */
+  
+  .side-left {
+  
+    position:
+      relative;
+  
+    min-width:
+      0;
+  }
+  
+  
+  /* =========================================
+     FIXED LOGO
+  ========================================= */
+  
+  .fixed-logo {
+  
+    position:
+      fixed;
+  
+    top:
+      50%;
+  
+    left:
+      42px;
+  
+    transform:
+      translateY(-50%);
+  
+    z-index:
+      100;
+  
+    color:
+      #ffffff;
+  
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  }
+  
+  
+  .logo-kicker {
+  
+    margin:
+      0;
+  
+    color:
+      rgba(255,255,255,0.75);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      10px;
+  
+    font-weight:
+      500;
+  
+    letter-spacing:
+      0.2em;
+  
+    line-height:
+      1.2;
+  }
+  
+  
+  .logo-title {
+  
+    margin:
+      4px 0 0;
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      21px;
+  
+    font-weight:
+      600;
+  
+    letter-spacing:
+      0.03em;
+  
+    line-height:
+      1.2;
+  }
+  
+  
+  .logo-jp {
+  
+    margin:
+      22px 0 0;
+  
+    color:
+      rgba(255,255,255,0.7);
+  
+    font-size:
+      8px;
+  
+    letter-spacing:
+      0.08em;
+  
+    writing-mode:
+      vertical-rl;
+  
+    line-height:
+      1.4;
+  }
+  
+  
+  /* =========================================
+     RIGHT COLUMN
+  ========================================= */
+  
+  .side-right {
+  
+    position:
+      relative;
+  
+    min-width:
+      0;
+  }
+  
+  
+  /* =========================================
+     FIXED NAV
+  ========================================= */
+  
+  .fixed-nav {
+  
+    position:
+      fixed;
+  
+    top:
+      50%;
+  
+    right:
+      42px;
+  
+    transform:
+      translateY(-50%);
+  
+    z-index:
+      100;
+  
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  
+    gap:
+      17px;
+  }
+  
+  
+  .nav-item {
+  
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  
+    align-items:
+      flex-start;
+  
+    color:
+      rgba(255,255,255,0.62);
+  
+    font-family:
+      "Inter",
+      "Noto Sans JP",
+      sans-serif;
+  
+    font-size:
+      9px;
+  
+    font-weight:
+      500;
+  
+    letter-spacing:
+      0.13em;
+  
+    line-height:
+      1.35;
+  
+    transition:
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  
+  .nav-item span {
+  
+    color:
+      rgba(255,255,255,0.4);
+  
+    font-size:
+      8px;
+  
+    letter-spacing:
+      0.1em;
+  
+    transition:
+      color 0.3s ease;
+  }
+  
+  
+  .nav-item.active {
+  
+    color:
+      #ffffff;
+  
+    transform:
+      translateX(-4px);
+  }
+  
+  
+  .nav-item.active span {
+  
+    color:
+      var(--gold);
+  }
+  
+  
+  /* =========================================
+     CENTER COLUMN
+  ========================================= */
+  
+  .site {
+  
+    width:
+      430px;
+  
+    max-width:
+      100%;
+  
+    min-height:
+      100vh;
+  
+    margin:
+      0 auto;
+  
+    padding:
+      30px 0 70px;
+  
+    /*
+      中央も背景を持つ。
+  
+      上から下に少しずつ
+      色が変化する。
+    */
+  
+    background:
+      linear-gradient(
+        180deg,
+        var(--blue-1) 0%,
+        var(--blue-2) 28%,
+        var(--blue-3) 62%,
+        var(--blue-4) 100%
+      );
+  }
+  
+  
+  /* =========================================
+     WHITE ROOM
+  ========================================= */
+  
+  .card {
+  
+    width:
+      calc(100% - 48px);
+  
+    margin:
+      0 auto 28px;
+  
+    padding:
+      40px 28px;
+  
+    /*
+      全部完全な白。
+    */
+  
+    background:
+      #ffffff;
+  
+    border-radius:
+      20px;
+  
+    overflow:
+      hidden;
+  }
+  
+  
+  /* =========================================
+     HERO
+  ========================================= */
+  
+  .hero {
+  
+    min-height:
+      650px;
+  
+    padding:
+      42px 28px 30px;
+  
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  }
+  
+  
+  .meta {
+  
+    margin:
+      0;
+  
+    color:
+      var(--gold);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      9px;
+  
+    font-weight:
+      500;
+  
+    letter-spacing:
+      0.18em;
+  
+    line-height:
+      1.2;
+  }
+  
+  
+  .hero h1 {
+  
+    margin:
+      58px 0 0;
+  
+    color:
+      var(--indigo);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      34px;
+  
+    font-weight:
+      600;
+  
+    line-height:
+      1.05;
+  
+    letter-spacing:
+      0.01em;
+  }
+  
+  
+  .hero-copy {
+  
+    margin:
+      22px 0 0;
+  
+    color:
+      var(--indigo);
+  
+    font-size:
+      15px;
+  
+    font-weight:
+      500;
+  
+    line-height:
+      1.9;
+  }
+  
+  
+  .hero-image {
+  
+    width:
+      70%;
+  
+    max-width:
+      270px;
+  
+    margin-top:
+      auto;
+  
+    margin-left:
+      auto;
+  }
+  
+  
+  .hero-image img {
+  
+    aspect-ratio:
+      4 / 5;
+  
+    object-fit:
+      cover;
+  
+    border-radius:
+      3px;
+  }
+  
+  
+  .scroll {
+  
+    margin-top:
+      24px;
+  
+    color:
+      var(--gray);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      8px;
+  
+    font-weight:
+      500;
+  
+    letter-spacing:
+      0.18em;
+  
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    gap:
+      10px;
+  }
+  
+  
+  .scroll span {
+  
+    width:
+      26px;
+  
+    height:
+      1px;
+  
+    background:
+      var(--gold);
+  }
+  
+  
+  /* =========================================
+     COMMON
+  ========================================= */
+  
+  .section-number {
+  
+    margin:
+      0;
+  
+    color:
+      var(--gold);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      10px;
+  
+    font-weight:
+      500;
+  
+    letter-spacing:
+      0.12em;
+  
+    line-height:
+      1.2;
+  }
+  
+  
+  .chapter-label {
+  
+    margin:
+      3px 0 0;
+  
+    color:
+      var(--indigo);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      9px;
+  
+    font-weight:
+      600;
+  
+    letter-spacing:
+      0.18em;
+  
+    line-height:
+      1.2;
+  }
+  
+  
+  /* =========================================
+     INTRO
+  ========================================= */
+  
+  .intro {
+  
+    min-height:
+      520px;
+  
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  
+    justify-content:
+      center;
+  }
+  
+  
+  .intro h2 {
+  
+    margin:
+      42px 0 0;
+  
+    color:
+      var(--indigo);
+  
+    font-size:
+      24px;
+  
+    font-weight:
+      500;
+  
+    line-height:
+      2;
+  
+    letter-spacing:
+      0.08em;
+  }
+  
+  
+  .intro-copy {
+  
+    margin:
+      38px 0 0;
+  
+    color:
+      var(--gray);
+  
+    font-size:
+      12px;
+  
+    font-weight:
+      400;
+  
+    line-height:
+      1.9;
+  }
+  
+  
+  /* =========================================
+     PHOTO
+  ========================================= */
+  
+  .photo-section {
+  
+    padding:
+      32px 28px 36px;
+  
+    background:
+      #ffffff;
+  }
+  
+  
+  .photo-section img {
+  
+    width:
+      78%;
+  
+    max-width:
+      280px;
+  
+    margin:
+      0 auto;
+  
+    aspect-ratio:
+      4 / 5;
+  
+    object-fit:
+      cover;
+  
+    border-radius:
+      3px;
+  }
+  
+  
+  /* =========================================
+     CHAPTER
+  ========================================= */
+  
+  .chapter {
+  
+    padding:
+      42px 28px 48px;
+  }
+  
+  
+  .chapter-head {
+  
+    margin-bottom:
+      28px;
+  }
+  
+  
+  .chapter-image {
+  
+    width:
+      78%;
+  
+    max-width:
+      290px;
+  
+    margin-left:
+      auto;
+  }
+  
+  
+  .chapter-image img {
+  
+    aspect-ratio:
+      4 / 5;
+  
+    object-fit:
+      cover;
+  
+    border-radius:
+      3px;
+  }
+  
+  
+  .chapter h2 {
+  
+    margin:
+      30px 0 0;
+  
+    color:
+      var(--indigo);
+  
+    font-size:
+      20px;
+  
+    font-weight:
+      500;
+  
+    line-height:
+      1.6;
+  
+    letter-spacing:
+      0.06em;
+  }
+  
+  
+  .chapter-link {
+  
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    gap:
+      12px;
+  
+    margin-top:
+      20px;
+  
+    padding-bottom:
+      4px;
+  
+    color:
+      var(--indigo);
+  
+    border-bottom:
+      1px solid var(--gold);
+  
+    font-size:
+      11px;
+  
+    font-weight:
+      500;
+  }
+  
+  
+  .chapter-link span {
+  
+    color:
+      var(--gold);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  }
+  
+  
+  /* =========================================
+     STAY
+  ========================================= */
+  
+  .stay {
+  
+    min-height:
+      440px;
+  
+    padding:
+      60px 28px;
+  
+    background:
+      #ffffff;
+  
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  
+    justify-content:
+      center;
+  }
+  
+  
+  .stay h2 {
+  
+    margin:
+      42px 0 0;
+  
+    padding:
+      28px 22px;
+  
+    color:
+      #ffffff;
+  
+    background:
+      var(--indigo);
+  
+    font-size:
+      23px;
+  
+    font-weight:
+      500;
+  
+    line-height:
+      2;
+  
+    letter-spacing:
+      0.08em;
+  }
+  
+  
+  .stay-link {
+  
+    display:
+      inline-flex;
+  
+    align-items:
+      center;
+  
+    gap:
+      12px;
+  
+    width:
+      fit-content;
+  
+    margin-top:
+      32px;
+  
+    padding-bottom:
+      4px;
+  
+    color:
+      var(--indigo);
+  
+    border-bottom:
+      1px solid var(--gold);
+  
+    font-size:
+      11px;
+  
+    font-weight:
+      500;
+  }
+  
+  
+  .stay-link span {
+  
+    color:
+      var(--gold);
+  }
+  
+  
+  /* =========================================
+     EVENT
+  ========================================= */
+  
+  .event {
+  
+    padding:
+      48px 28px 54px;
+  }
+  
+  
+  .event-list {
+  
+    margin-top:
+      38px;
+  }
+  
+  
+  .event-item {
+  
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    justify-content:
+      space-between;
+  
+    padding:
+      20px 0;
+  
+    border-top:
+      1px solid var(--line);
+  }
+  
+  
+  .event-item:last-child {
+  
+    border-bottom:
+      1px solid var(--line);
+  }
+  
+  
+  .event-item div {
+  
+    display:
+      flex;
+  
+    flex-direction:
+      column;
+  
+    gap:
+      4px;
+  }
+  
+  
+  .event-date {
+  
+    color:
+      var(--gold);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      9px;
+  
+    font-weight:
+      500;
+  }
+  
+  
+  .event-item strong {
+  
+    color:
+      var(--indigo);
+  
+    font-size:
+      11px;
+  
+    font-weight:
+      500;
+  
+    line-height:
+      1.6;
+  }
+  
+  
+  .event-arrow {
+  
+    color:
+      var(--gold);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  }
+  
+  
+  /* =========================================
+     DISCOVER
+  ========================================= */
+  
+  .discover {
+  
+    padding:
+      58px 28px 50px;
+  
+    background:
+      #ffffff;
+  }
+  
+  
+  .discover h2 {
+  
+    margin:
+      40px 0 0;
+  
+    color:
+      var(--indigo);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      27px;
+  
+    font-weight:
+      600;
+  
+    line-height:
+      1.05;
+  
+    letter-spacing:
+      0.01em;
+  }
+  
+  
+  .discover-copy {
+  
+    margin:
+      26px 0 0;
+  
+    color:
+      var(--gray);
+  
+    font-size:
+      12px;
+  }
+  
+  
+  .discover-links {
+  
+    margin-top:
+      38px;
+  }
+  
+  
+  .discover-links a {
+  
+    display:
+      flex;
+  
+    align-items:
+      center;
+  
+    justify-content:
+      space-between;
+  
+    padding:
+      15px 0;
+  
+    border-bottom:
+      1px solid var(--line);
+  
+    color:
+      var(--indigo);
+  
+    font-size:
+      11px;
+  
+    font-weight:
+      500;
+  }
+  
+  
+  .discover-links span {
+  
+    color:
+      var(--gold);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  }
+  
+  
+  /* =========================================
+     FOOTER
+  ========================================= */
+  
+  .footer {
+  
+    padding:
+      42px 28px;
+  
+    text-align:
+      center;
+  
+    background:
+      #ffffff;
+  }
+  
+  
+  .footer-title {
+  
+    margin:
+      0 0 18px;
+  
+    color:
+      var(--indigo);
+  
+    font-family:
+      "Inter",
+      sans-serif;
+  
+    font-size:
+      12px;
+  
+    font-weight:
+      600;
+  
+    letter-spacing:
+      0.08em;
+  }
+  
+  
+  .footer small {
+  
+    display:
+      block;
+  
+    color:
+      var(--gray);
+  
+    font-size:
+      8px;
+  
+    line-height:
+      2;
+  }
+  
+  
+  /* =========================================
+     SCROLL ANIMATION
+  ========================================= */
+  
+  .reveal {
+  
+    opacity:
+      0;
+  
+    transform:
+      translateY(18px);
+  
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+  }
+  
+  
+  .reveal.is-visible {
+  
+    opacity:
+      1;
+  
+    transform:
+      translateY(0);
+  }
+  
+  
+  /* =========================================
+     TABLET / MOBILE
+  ========================================= */
+  
+  @media (max-width: 768px) {
+  
+    /*
+      PCの3カラムを解除。
+  
+      左右のロゴ・ナビを非表示。
+    */
+  
+    .page-layout {
+  
+      display:
+        block;
+    }
+  
+  
+    .side-left,
+    .side-right {
+  
+      display:
+        none;
+    }
+  
+  
+    .site {
+  
+      width:
+        100%;
+  
+      max-width:
+        430px;
+  
+      margin:
+        0 auto;
+  
+      padding:
+        18px 0 45px;
+    }
+  
+  
+    .card {
+  
+      width:
+        calc(100% - 40px);
+  
+      margin-bottom:
+        22px;
+    }
+  
+  }
+  
+  
+  /* =========================================
+     SMALL MOBILE
+  ========================================= */
+  
+  @media (max-width: 360px) {
+  
+    .card {
+  
+      width:
+        calc(100% - 28px);
+  
+      padding-left:
+        24px;
+  
+      padding-right:
+        24px;
+    }
+  
+  
+    .hero h1 {
+  
+      font-size:
+        30px;
+    }
+  
+  }
+  
+  
+  /* =========================================
+     REDUCED MOTION
+  ========================================= */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    html {
+      scroll-behavior:
+        auto;
+    }
+  
+  
+    .reveal {
+  
+      opacity:
+        1;
+  
+      transform:
+        none;
+  
+      transition:
+        none;
+    }
+  
+  }
