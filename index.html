@@ -1,121 +1,569 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="FROM MINAMISOMA — 海があり、風があり、馬がいる。">
-<title>FROM MINAMISOMA</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="FROM MINAMISOMA — 日常から、少しだけ自由になる旅。"
+  >
+
+  <title>FROM MINAMISOMA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="site-shell">
-  <aside class="left-rail">
-    <a href="#top" class="brand" aria-label="FROM MINAMISOMA home">
-      <span class="brand-from">FROM</span>
-      <strong>MINAMISOMA</strong>
-    </a>
-    <div class="left-caption">FUKUSHIMA / JAPAN</div>
-    <div class="left-vertical">日常から、少しだけ自由になる旅。</div>
-  </aside>
 
-  <main class="center-column" id="top">
-    <section class="intro-box box" id="intro">
-      <div class="box-head"><span>00</span><span>FROM MINAMISOMA</span></div>
-      <div class="intro-main">
-        <p class="mini-label">WELCOME TO OUR PLACE</p>
-        <h1>海があり、<br>風があり、<br><em>馬がいる。</em></h1>
-        <p class="intro-copy">南相馬を知るための、<br>小さな入口。</p>
+  <div class="site">
+
+    <!-- =========================
+         LEFT : BRAND
+    ========================== -->
+
+    <aside class="left-panel">
+
+      <a href="#top" class="brand">
+        <span class="brand-from">FROM</span>
+        <span class="brand-name">MINAMISOMA</span>
+      </a>
+
+      <div class="left-bottom">
+        <span>FUKUSHIMA</span>
+        <span>JAPAN</span>
       </div>
-      <div class="intro-foot"><span>SCROLL TO EXPLORE</span><span>↓</span></div>
-    </section>
 
-    <section class="floor-box box sea-box" id="sea">
-      <a class="box-link" href="https://evnami-kitaizumi.com/" target="_blank" rel="noopener noreferrer">
-        <div class="box-head"><span>01</span><span>SEA / 北泉海岸</span><span class="arrow">↗</span></div>
-        <div class="floor-content">
-          <p class="floor-index">01</p>
-          <div>
-            <p class="mini-label">WITH SEA</p>
-            <h2>海と、風と、<br>少し自由な時間。</h2>
-            <p class="floor-note">北泉海岸</p>
-          </div>
+    </aside>
+
+
+    <!-- =========================
+         CENTER : CONTENT
+    ========================== -->
+
+    <main class="content" id="top">
+
+      <!-- INTRO -->
+
+      <section class="intro">
+
+        <div class="intro-top">
+          <span>FROM MINAMISOMA</span>
+          <span>00</span>
         </div>
-        <div class="box-bottom"><span>KITAIZUMI / SEA</span><span>EXPLORE →</span></div>
-      </a>
-    </section>
 
-    <section class="floor-box box horse-box" id="horses">
-      <a class="box-link" href="https://soma-nomaoi.jp/" target="_blank" rel="noopener noreferrer">
-        <div class="box-head"><span>02</span><span>HORSES / 相馬野馬追</span><span class="arrow">↗</span></div>
-        <div class="floor-content">
-          <p class="floor-index">02</p>
-          <div>
-            <p class="mini-label">WITH HORSES</p>
-            <h2>馬と生きる、<br>この土地の時間。</h2>
-            <p class="floor-note">相馬野馬追</p>
-          </div>
+        <div class="intro-main">
+
+          <p class="intro-small">
+            MINAMISOMA / FUKUSHIMA
+          </p>
+
+          <h1>
+            海があり、<br>
+            風があり、<br>
+            馬がいる。
+          </h1>
+
+          <p class="intro-lead">
+            日常から、<br>
+            少しだけ自由になる旅。
+          </p>
+
         </div>
-        <div class="box-bottom"><span>NOMAOI / HORSES</span><span>EXPLORE →</span></div>
-      </a>
-    </section>
 
-    <section class="floor-box box event-box" id="event">
-      <div class="box-head"><span>03</span><span>EVENT / 南相馬のいま</span></div>
-      <div class="event-content">
-        <p class="mini-label">NOW IN MINAMISOMA</p>
-        <h2>この街で、<br>今起きていること。</h2>
+        <div class="intro-bottom">
+          <span>FLOOR GUIDE</span>
+          <span>SCROLL ↓</span>
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           BOX 01 : SEA
+      ========================== -->
+
+      <a
+        href="https://evnami-kitaizumi.com/"
+        class="floor-box floor-sea"
+        target="_blank"
+        rel="noopener noreferrer"
+        id="sea"
+      >
+
+        <div class="box-header">
+
+          <span class="box-number">01</span>
+
+          <span class="box-category">
+            WITH SEA
+          </span>
+
+          <span class="box-arrow">
+            ↗
+          </span>
+
+        </div>
+
+        <div class="box-content">
+
+          <p class="box-label">
+            KITAIZUMI BEACH
+          </p>
+
+          <h2>
+            海と、風と、<br>
+            少し自由な時間。
+          </h2>
+
+          <p class="box-description">
+            ほとんど毎日、波がある。<br>
+            南相馬の海へ。
+          </p>
+
+        </div>
+
+        <div class="box-footer">
+
+          <span>北泉海岸</span>
+
+          <span>
+            EXPLORE →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- =========================
+           BOX 02 : HORSES
+      ========================== -->
+
+      <a
+        href="https://soma-nomaoi.jp/"
+        class="floor-box floor-horses"
+        target="_blank"
+        rel="noopener noreferrer"
+        id="horses"
+      >
+
+        <div class="box-header">
+
+          <span class="box-number">02</span>
+
+          <span class="box-category">
+            WITH HORSES
+          </span>
+
+          <span class="box-arrow">
+            ↗
+          </span>
+
+        </div>
+
+        <div class="box-content">
+
+          <p class="box-label">
+            SOMA NOMAOI
+          </p>
+
+          <h2>
+            馬と生きる、<br>
+            この土地の時間。
+          </h2>
+
+          <p class="box-description">
+            受け継がれてきた、<br>
+            南相馬のもうひとつの風景。
+          </p>
+
+        </div>
+
+        <div class="box-footer">
+
+          <span>相馬野馬追</span>
+
+          <span>
+            EXPLORE →
+          </span>
+
+        </div>
+
+      </a>
+
+
+      <!-- =========================
+           BOX 03 : EVENT
+      ========================== -->
+
+      <a
+        href="#events"
+        class="floor-box floor-event"
+        id="events"
+      >
+
+        <div class="box-header">
+
+          <span class="box-number">03</span>
+
+          <span class="box-category">
+            EVENT
+          </span>
+
+          <span class="box-arrow">
+            → 
+          </span>
+
+        </div>
+
+        <div class="box-content">
+
+          <p class="box-label">
+            WHAT'S HAPPENING
+          </p>
+
+          <h2>
+            南相馬で、<br>
+            何かが起きている。
+          </h2>
+
+          <p class="box-description">
+            季節ごとのイベントや、<br>
+            この街で出会える時間。
+          </p>
+
+        </div>
+
         <div class="event-list">
-          <a href="#" class="event-item"><span class="event-date">2026.10</span><strong>北泉海岸・サーフィン</strong><span>→</span></a>
-          <a href="#" class="event-item"><span class="event-date">MORE</span><strong>イベント情報を見る</strong><span>→</span></a>
+
+          <div class="event-item">
+            <span class="event-date">2026.10</span>
+          <a href="https://www.nsa-surf.org/match/60th_alljapan_2026/">
+            <span class="event-name">
+              北泉海岸 / SURFING
+            </span>
+          </a>
+          </div>
+
+          <div class="event-item">
+            <span class="event-date">MORE</span>
+            <span class="event-name">
+              南相馬のイベントを見る →
+            </span>
+          </div>
+
         </div>
-      </div>
-    </section>
 
-    <section class="floor-box box discover-box" id="discover">
-      <div class="box-head"><span>04</span><span>DISCOVER / 南相馬をもっと</span></div>
-      <div class="discover-content">
-        <p class="mini-label">FLOOR GUIDE / LAST STOP</p>
-        <h2>海と馬の、<br>その先へ。</h2>
-        <div class="link-list">
-          <a href="https://minamisomakanko.org/" target="_blank" rel="noopener noreferrer">南相馬観光協会 <span>↗</span></a>
-          <a href="https://www.kashima-kankou.jp/" target="_blank" rel="noopener noreferrer">かしま観光協会 <span>↗</span></a>
-          <a href="https://odaka6014.jp/" target="_blank" rel="noopener noreferrer">小高観光協会 <span>↗</span></a>
-          <a href="https://www.city.minamisoma.lg.jp/tourist/index.html" target="_blank" rel="noopener noreferrer">南相馬市観光情報 <span>↗</span></a>
+      </a>
+
+
+      <!-- =========================
+           BOX 04 : DISCOVER
+      ========================== -->
+
+      <section
+        class="floor-box floor-discover"
+        id="discover"
+      >
+
+        <div class="box-header">
+
+          <span class="box-number">04</span>
+
+          <span class="box-category">
+            DISCOVER
+          </span>
+
         </div>
+
+        <div class="box-content">
+
+          <p class="box-label">
+            KNOW MORE
+          </p>
+
+          <h2>
+            南相馬を、<br>
+            もう少し知る。
+          </h2>
+
+          <p class="box-description">
+            海と馬の、その先へ。
+          </p>
+
+        </div>
+
+
+        <div class="discover-links">
+
+          <a
+            href="https://minamisomakanko.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>南相馬観光協会</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="https://www.kashima-kankou.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>かしま観光協会</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="https://odaka6014.jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>小高観光協会</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="https://www.city.minamisoma.lg.jp/tourist/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>南相馬市観光情報</span>
+            <span>↗</span>
+          </a>
+
+        </div>
+
+      </section>
+
+
+      <!-- =========================
+           FOOTER
+      ========================== -->
+
+      <footer class="footer">
+
+        <div>
+          <strong>
+            FROM MINAMISOMA
+          </strong>
+
+          <small>
+            南相馬市観光事業実行委員会
+          </small>
+        </div>
+
+        <span>
+          © MINAMISOMA
+        </span>
+
+      </footer>
+
+    </main>
+
+
+    <!-- =========================
+         RIGHT : FLOOR GUIDE
+    ========================== -->
+
+    <aside class="right-panel">
+
+      <div class="guide-title">
+        <span>FLOOR</span>
+        <strong>GUIDE</strong>
       </div>
-    </section>
 
-    <footer class="center-footer">
-      <span>FROM MINAMISOMA</span>
-      <span>南相馬市観光事業実行委員会</span>
-    </footer>
-  </main>
 
-  <aside class="right-rail">
-    <div class="floor-title">FLOOR<br>GUIDE</div>
-    <nav class="floor-nav" aria-label="FLOOR GUIDE">
-      <a href="#top" data-target="top" class="active"><span>00</span><b>TOP</b></a>
-      <a href="#sea" data-target="sea"><span>01</span><b>SEA</b><small>北泉海岸</small></a>
-      <a href="#horses" data-target="horses"><span>02</span><b>HORSES</b><small>相馬野馬追</small></a>
-      <a href="#event" data-target="event"><span>03</span><b>EVENT</b><small>南相馬のいま</small></a>
-      <a href="#discover" data-target="discover"><span>04</span><b>DISCOVER</b><small>観光情報</small></a>
-    </nav>
-    <div class="right-note">MOVE THROUGH<br>THE FLOORS ↓</div>
-  </aside>
-</div>
-<script>
-const navItems = document.querySelectorAll('.floor-nav a');
-const sections = document.querySelectorAll('#top, #sea, #horses, #event, #discover');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    navItems.forEach(item => item.classList.toggle('active', item.dataset.target === entry.target.id));
-  });
-}, { root: document.querySelector('.center-column'), rootMargin: '-38% 0px -48% 0px', threshold: 0 });
-sections.forEach(section => observer.observe(section));
-</script>
+      <nav class="floor-nav">
+
+        <a href="#top" class="nav-item active">
+
+          <span class="nav-number">
+            00
+          </span>
+
+          <span class="nav-name">
+            TOP
+          </span>
+
+        </a>
+
+
+        <a href="#sea" class="nav-item">
+
+          <span class="nav-number">
+            01
+          </span>
+
+          <span class="nav-name">
+            SEA
+          </span>
+
+        </a>
+
+
+        <a href="#horses" class="nav-item">
+
+          <span class="nav-number">
+            02
+          </span>
+
+          <span class="nav-name">
+            HORSES
+          </span>
+
+        </a>
+
+
+        <a href="#events" class="nav-item">
+
+          <span class="nav-number">
+            03
+          </span>
+
+          <span class="nav-name">
+            EVENT
+          </span>
+
+        </a>
+
+
+        <a href="#discover" class="nav-item">
+
+          <span class="nav-number">
+            04
+          </span>
+
+          <span class="nav-name">
+            DISCOVER
+          </span>
+
+        </a>
+
+      </nav>
+
+
+      <div class="guide-bottom">
+
+        <span>
+          SOUTHERN<br>
+          FUKUSHIMA
+        </span>
+
+        <span>
+          SCROLL
+        </span>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const content = document.querySelector(".content");
+    const navItems = document.querySelectorAll(".nav-item");
+
+    const sections = [
+      document.querySelector("#top"),
+      document.querySelector("#sea"),
+      document.querySelector("#horses"),
+      document.querySelector("#events"),
+      document.querySelector("#discover")
+    ].filter(Boolean);
+
+
+    const observer = new IntersectionObserver(
+
+      (entries) => {
+
+        entries.forEach((entry) => {
+
+          if (!entry.isIntersecting) return;
+
+          navItems.forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          const target =
+            document.querySelector(
+              `.nav-item[href="#${entry.target.id}"]`
+            );
+
+          if (target) {
+            target.classList.add("active");
+          }
+
+        });
+
+      },
+
+      {
+        root: content,
+        threshold: 0.35
+      }
+
+    );
+
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+
+    const boxes =
+      document.querySelectorAll(".floor-box");
+
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("is-visible");
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          root: content,
+          threshold: 0.1
+        }
+
+      );
+
+
+    boxes.forEach((box) => {
+      revealObserver.observe(box);
+    });
+
+  </script>
+
 </body>
 </html>
